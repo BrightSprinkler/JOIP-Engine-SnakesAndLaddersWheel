@@ -21,13 +21,13 @@ Move by throwing a dice (1-6)
 1 Ring = 8 Fields
 2 Ring = 16 Fields
 3 Ring = 24 Fields
-1 Field = Goal
--_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+1 Field = Goal -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 49 Fields in total
 
-![Fields](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine_SnakesAndLaddersWheel/main/Fields.png)
+![Fields](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/main/Fields.png)
 
 ## Characters
+
 Reoccuring characters every ring
 Reoccuring character has similar task -> difficulty might increase per time visited
 
@@ -37,22 +37,23 @@ Reoccuring character has similar task -> difficulty might increase per time visi
 4 Chars for X-Lines
 32 Chars for remaining fields
 
-![Characters](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine_SnakesAndLaddersWheel/main/Characters.png)
+![Characters](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/main/Characters.png)
 
 ## Tasks
 
-* stroking
-  * different bpm
-  * different durations
-  * different techniques (main hand, reverse hand, only head, ...)
-* edging
-  * multiple 
-  * holding
-* cbt (optional? -> what if turned of?)
-  * ball slapping
-  * ball punching
-  * ball squeezing
-  * different intensities
+- stroking
+  - different bpm
+  - different durations
+  - different techniques (main hand, reverse hand, only head, ...)
+- edging
+  - multiple
+  - holding
+- cbt (optional? -> what if turned of?)
+  - ball slapping
+  - ball punching
+  - ball squeezing
+  - different intensities
 
 Snakes, Ladders and Reverse have complex tasks with multiple stages
+
 - e.g.: stroke, edge, stroke , edge hold
