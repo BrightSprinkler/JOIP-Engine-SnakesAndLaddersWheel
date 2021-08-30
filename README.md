@@ -24,7 +24,7 @@ Move by throwing a dice (1-6)
 1 Field = Goal -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 49 Fields in total
 
-![Fields](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/main/Fields.png)
+![Fields](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/master/Fields.png)
 
 ## Characters
 
@@ -37,7 +37,7 @@ Reoccuring character has similar task -> difficulty might increase per time visi
 4 Chars for X-Lines
 32 Chars for remaining fields
 
-![Characters](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/main/Characters.png)
+![Characters](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/master/Characters.png)
 
 ## Tasks
 
