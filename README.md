@@ -1,11 +1,6 @@
-# JOIP-Engine_SnakesAndLaddersWheel
-
-Tease for RemotelyChaotics JOIP Engine
-
-- https://milovana.com/forum/viewtopic.php?f=26&t=24395&p=309315#p309315
-- https://github.com/RemotelyChaotic/JOIPEngine/tree/master/src
-
 # Snakes And Ladders Wheel
+
+Milovana Webtease
 
 ## Idea
 
@@ -26,16 +21,42 @@ Move by throwing a dice (1-6)
 
 ![Fields](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/master/Fields.png)
 
+### Probabilities
+
+![Probabilities](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/master/D6%20Probabilities.png)
+
+[Calculation Tool](https://github.com/BrightSprinkler/SnakesAndLetterWheelProbabilities)
+
+70 % of time the game will finish within 100 dice rolls.
+This will take the player max 200 minutes (3.3 hours). The average time at 50 rolls would be ~1.5 hours (the time of 2 minutes per field is only assumed).
+
+20 % of time the game will finish within 200 dice rolls.
+This will take the player max 400 minutes (7 hours) (the time of 2 minutes per field is only assumed).
+
+The times can be halfed by aiming for a max duration per field of 1 minute.\
+Kwnoing this the existing idea of reoccurring characters needs to be changed:
+
+- Less reoccurring characters
+  - Only snakes and ladders
+  - Win field will use both characters
+
 ## Characters
 
 Reoccuring characters every ring
 Reoccuring character has similar task -> difficulty might increase per time visited
 
-1 Char for Ladders/Win (vertical)\
+~~1 Char for Ladders/Win (vertical)\
 1 Char for Snakes (vertical)\
 2 Chars for Reverse (horizontal)\
 4 Chars for X-Lines\
-32 Chars for remaining fields
+32 Chars for remaining fields~~
+_see Probabilities for me details_
+
+1 Char for ladders
+1 Char for snakes
+46 Chars for remaining fields
+
+Win field = both characters from ladder and snake
 
 ![Characters](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/master/Characters.png)
 
