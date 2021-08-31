@@ -18,10 +18,10 @@ If you miss the right field a new round beginns
 
 Move by throwing a dice (1-6)
 
-1 Ring = 8 Fields
-2 Ring = 16 Fields
-3 Ring = 24 Fields
-1 Field = Goal -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+1 Ring = 8 Fields\
+2 Ring = 16 Fields\
+3 Ring = 24 Fields\
+1 Field = Goal\
 49 Fields in total
 
 ![Fields](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/master/Fields.png)
@@ -31,13 +31,17 @@ Move by throwing a dice (1-6)
 Reoccuring characters every ring
 Reoccuring character has similar task -> difficulty might increase per time visited
 
-1 Char for Ladders/Win (vertical)
-1 Char for Snakes (vertical)
-2 Chars for Reverse (horizontal)
-4 Chars for X-Lines
+1 Char for Ladders/Win (vertical)\
+1 Char for Snakes (vertical)\
+2 Chars for Reverse (horizontal)\
+4 Chars for X-Lines\
 32 Chars for remaining fields
 
 ![Characters](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/master/Characters.png)
+
+**!! SPOILER !!**
+[Characters and their tasks](Characters.md)
+**!! SPOILER !!**
 
 ## Tasks
 
@@ -57,3 +61,5 @@ Reoccuring character has similar task -> difficulty might increase per time visi
 Snakes, Ladders and Reverse have complex tasks with multiple stages
 
 - e.g.: stroke, edge, stroke , edge hold
+
+Win is special tasks with Protagonist and Antagonist.
