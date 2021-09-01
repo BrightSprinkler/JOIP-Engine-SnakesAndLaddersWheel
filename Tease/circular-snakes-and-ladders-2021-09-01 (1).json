@@ -1,0 +1,492 @@
+{
+  "pages": {
+    "start": [
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1497348"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Welcome to another <span style=\"color: #f44336\"><strong>Snakes And Ladders</strong></span> tease</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>But this time it&#39;s <span style=\"color: #f44336\"><u><strong>circles</strong></u></span>.</p>"
+        }
+      },
+      {
+        "choice": {
+          "options": [
+            {
+              "label": "Start",
+              "commands": [
+                {
+                  "goto": {
+                    "target": "game"
+                  }
+                }
+              ],
+              "color": "#66bb6a"
+            },
+            {
+              "label": "Explanation",
+              "commands": [
+                {
+                  "goto": {
+                    "target": "explanation"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Disclaimer",
+              "commands": [
+                {
+                  "goto": {
+                    "target": "disclaimer"
+                  }
+                }
+              ],
+              "color": "#212121"
+            }
+          ]
+        }
+      }
+    ],
+    "explanation": [],
+    "game": [],
+    "disclaimer": [
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1497349"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>I do not own any of the images or fonts that are used to create this tease. You may only use this tease for personal use. None of the items in this tease can be sold or redistributed for money.</p><p>If you are a copyright holder of any of the used resources and want them removed, feel free to contact me.</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Every character is 18 years old or older.</p>",
+          "mode": "autoplay"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the author’s imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</p>",
+          "mode": "autoplay"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Always consider your own safety first. If the tease asks you to do anything you feel is unsafe or could threaten your health, don&#39;t do it. Ensure your wellbeing is paramount at all times.</p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "goto": {
+          "target": "start"
+        }
+      }
+    ]
+  },
+  "modules": {
+    "audio": {}
+  },
+  "galleries": {
+    "0ad9a1b6-872f-4526-9af2-c6a725cb1e88": {
+      "name": "Field",
+      "images": [
+        {
+          "id": 1497210,
+          "hash": "5a755ae44f4d254a4348a397f5e526735d5ac8e3",
+          "size": 500356,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497211,
+          "hash": "37fe8656e9db7702fc3b25c7042542dafcb751eb",
+          "size": 502338,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497212,
+          "hash": "edfff4fcdc27f8240dbf6f6109c70f69b269360c",
+          "size": 508008,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497213,
+          "hash": "22c842568544c029f658ed09e3c6fa77771b3d56",
+          "size": 501869,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497214,
+          "hash": "ba477889dab6cd9062d4415be1d8fb405d437a88",
+          "size": 507925,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497215,
+          "hash": "e806b93e90836fb0d3dd86a34688885e2ef78c22",
+          "size": 503273,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497216,
+          "hash": "9accab1ab5562fbef7de2fa141115901e7a79b70",
+          "size": 507933,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497217,
+          "hash": "438378cd0925f2def6eeac618975fda91a5d85b3",
+          "size": 501913,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497218,
+          "hash": "1f15064a1dfc18fef92635d48b5ca35293843d25",
+          "size": 507948,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497219,
+          "hash": "6e0028eb1d5414167edef5578ee482f910c05355",
+          "size": 502235,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497220,
+          "hash": "07192fb5e9f447558ebc7c5081d4a809738d9d64",
+          "size": 508109,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497221,
+          "hash": "dcf9b9ef3f89942d4aa5a09b38a090be55c6d5b6",
+          "size": 508459,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497222,
+          "hash": "5bf9b14afa930ad48f22874bbfbb6e86f75fc68c",
+          "size": 508491,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497223,
+          "hash": "ff1110406a9f6047dab3185435dd85b55c390564",
+          "size": 501781,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497224,
+          "hash": "6763053a919f64d0844503fdf0bbc5e6bd59f238",
+          "size": 508481,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497225,
+          "hash": "a54eedc311a638c2d6deae8d67343c87ea3aab08",
+          "size": 508413,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497226,
+          "hash": "b34f85e2e9390a3182efe4f5b5da06d9fc9fdbd0",
+          "size": 507994,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497227,
+          "hash": "2600d37f5e8799d137a38434bd30780fdd6c3b4b",
+          "size": 503034,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497228,
+          "hash": "97e44ac5ced0c8da8984a9f998b47af9a4e70e8d",
+          "size": 508077,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497229,
+          "hash": "e409e451acbb33ad8e0c5f65620c393b62abd1d3",
+          "size": 508319,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497230,
+          "hash": "324368309596c78b1bb15ffbe612a64f2c10ded8",
+          "size": 507973,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497231,
+          "hash": "58e98a5226f036ac3573bb4c78ff1ce4f83df87e",
+          "size": 501649,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497232,
+          "hash": "20a79d22dc99d03e30dfb22d89cc8490b3c86f04",
+          "size": 507970,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497233,
+          "hash": "0bfb2363f74764f2f83ea6fd8bb3e0248a1c7594",
+          "size": 508338,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497234,
+          "hash": "ff9c5045dcd8d313c7c4c3a84d207093d983e657",
+          "size": 507971,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497235,
+          "hash": "c7e42c239d6b5a4995c9220520351ea0039e9115",
+          "size": 502175,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497236,
+          "hash": "706e1844d9ce5fd464c2da8c06e6bab05a3d1932",
+          "size": 508518,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497237,
+          "hash": "2aecba67db37d5210d68861a100679abbd0eeb0f",
+          "size": 508950,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497238,
+          "hash": "948dfabe62f5b8e233da2395195da671acf06cab",
+          "size": 508928,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497239,
+          "hash": "91fb837c84f8137c80fa4fd39e95a65672ba4a0a",
+          "size": 508949,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497240,
+          "hash": "1aaec9277faba051c76f5d88b71e74801eb805db",
+          "size": 508563,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497241,
+          "hash": "198817f5d341d1a9d70f02e59889d74225ba1471",
+          "size": 501732,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497242,
+          "hash": "6e0edd662b4d368ead7069aeb899a9732e8c6c3c",
+          "size": 508537,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497243,
+          "hash": "8a87924766a0f92ab620181a25bebcea2a508e6c",
+          "size": 508869,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497244,
+          "hash": "f02221d0b2a13146dad951c4fbd9790f4bf37489",
+          "size": 508962,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497245,
+          "hash": "a1c70eb28fd4d2319ccdd277b237551391dae6dd",
+          "size": 508550,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497246,
+          "hash": "a3c0c3cc1867162a91eb929e646507ed1ea1aa4d",
+          "size": 509113,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497247,
+          "hash": "98d1a9f271b5d6bc760b47b92d74597f3d96d99e",
+          "size": 502906,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497248,
+          "hash": "a1d00dee1bb656f394a940835d08e496480ab784",
+          "size": 508987,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497249,
+          "hash": "f8e8e0b87f83da47703e14bd4628435d6b3b749e",
+          "size": 508916,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497250,
+          "hash": "1c77a505c535bb386030bec296054cff42e14510",
+          "size": 509070,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497251,
+          "hash": "55b708348ea5433352a13cba01dce1691dbe1c13",
+          "size": 508838,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497252,
+          "hash": "922ca9ec4749b9f34c0f471b80b58a13280854c5",
+          "size": 508603,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497253,
+          "hash": "8f652e77f6bdc9d2fcb67b99ab9a28b355130c81",
+          "size": 501738,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497254,
+          "hash": "983c1e411ca0f9a87874e7e89cd796e412856c99",
+          "size": 508577,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497255,
+          "hash": "fccb83babd4fcf6b565cf828d11d6de2f1d3c9d3",
+          "size": 508876,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497256,
+          "hash": "f8526875b3c5de9853485a3fb60aafdd1cf2338a",
+          "size": 509030,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497257,
+          "hash": "1ef6271299b8f0d46c52e6f52633e785b295870a",
+          "size": 508978,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497258,
+          "hash": "37863511bb678f4ada468b0a45a244f2d2115343",
+          "size": 508498,
+          "width": 1080,
+          "height": 1080
+        }
+      ]
+    },
+    "5d08b1ec-e760-402d-ac5b-884242e0eb81": {
+      "name": "Menu Images",
+      "images": [
+        {
+          "id": 1497348,
+          "hash": "c556eb93f72c971dba0e0ecc015f4929dcc0bee7",
+          "size": 372960,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1497349,
+          "hash": "e1e5912e7d64e2bcf10c37ab691447141645a7ca",
+          "size": 582252,
+          "width": 1080,
+          "height": 1080
+        }
+      ]
+    }
+  },
+  "editor": {
+    "recentImages": [
+      {
+        "type": "gallery",
+        "mimeType": "image/jpeg",
+        "galleryId": "5d08b1ec-e760-402d-ac5b-884242e0eb81",
+        "url": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1497348",
+        "imageId": 1497348
+      },
+      {
+        "type": "gallery",
+        "mimeType": "image/jpeg",
+        "galleryId": "0ad9a1b6-872f-4526-9af2-c6a725cb1e88",
+        "url": "gallery:0ad9a1b6-872f-4526-9af2-c6a725cb1e88/1497210",
+        "imageId": 1497210
+      }
+    ]
+  },
+  "init": "var game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) === -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.lengt(); i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n      }\r\n  \r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false };\r\n      var roll = game.rollDice();\r\n    \r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n  \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n  \r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n  \r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      return result;\r\n    }\r\n  };",
+  "files": {}
+}
