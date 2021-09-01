@@ -19,11 +19,11 @@ Move by throwing a dice (1-6)
 1 Field = Goal\
 49 Fields in total
 
-![Fields](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/master/Fields.png)
+![Fields](https://raw.githubusercontent.com/BrightSprinkler/SnakesAndLaddersWheel/master/Fields.png)
 
 ### Probabilities
 
-![Probabilities](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/master/D6%20Probabilities.png)
+![Probabilities](https://raw.githubusercontent.com/BrightSprinkler/SnakesAndLaddersWheel/master/D6%20Probabilities.png)
 
 [Calculation Tool](https://github.com/BrightSprinkler/SnakesAndLetterWheelProbabilities)
 
@@ -58,7 +58,7 @@ _see Probabilities for me details_
 
 Win field = both characters from ladder and snake
 
-![Characters](https://raw.githubusercontent.com/BrightSprinkler/JOIP-Engine-SnakesAndLaddersWheel/master/Characters.png)
+![Characters](https://raw.githubusercontent.com/BrightSprinkler/SnakesAndLaddersWheel/master/Characters.png)
 
 **!! SPOILER !!**
 [Characters and their tasks](Characters.md)
