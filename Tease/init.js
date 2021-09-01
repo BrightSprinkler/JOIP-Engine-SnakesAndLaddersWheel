@@ -47,7 +47,7 @@ var game = {
     },
     getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {
       var reverseFields = [];
-      for (var i = 0; i < reverseFieldIndex.lengt(); i++) {
+      for (var i = 0; i < reverseFieldIndex.length; i++) {
         reverseFields.push(reverseFieldIndex[i] + startindex);
       }
 
@@ -103,6 +103,7 @@ var game = {
   
       result.roll = roll;
       result.newField = newField + 1;
+      console.warn(result);
       return result;
     }
   };
