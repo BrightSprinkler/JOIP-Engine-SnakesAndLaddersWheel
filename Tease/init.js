@@ -1,3 +1,6 @@
+var imageFieldStack = [];
+var isSlideShow = false;
+var lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false };
 var game = {
     currentFieldIndex: 0,
     isInReverse: false,
@@ -66,12 +69,11 @@ var game = {
         game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])
         game.currentRing = game.innerRing;
       }
-  
+    
       var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false };
       var roll = game.rollDice();
-    
       var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);
-  
+    
       if (game.isOnLadder(newField, game.currentRing)) {
         result.isLadder = true;
   
@@ -83,7 +85,7 @@ var game = {
         }
   
       }
-  
+
       if (game.isOnSnake(newField, game.currentRing)) {
         result.isSnake = true;
   
@@ -93,7 +95,7 @@ var game = {
         }
   
       }
-  
+
       if (game.isOnReverse(newField, game.currentRing)) {
         result.isReverse = true;
         game.isInReverse = !game.isInReverse;
@@ -104,6 +106,7 @@ var game = {
       result.roll = roll;
       result.newField = newField + 1;
       console.warn(result);
+      lastTurn = result;
       return result;
     }
   };

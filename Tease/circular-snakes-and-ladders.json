@@ -26,7 +26,7 @@
               "commands": [
                 {
                   "goto": {
-                    "target": "game"
+                    "target": "currentFieldImage"
                   }
                 }
               ],
@@ -57,16 +57,165 @@
         }
       }
     ],
-    "explanation": [],
-    "game": [
+    "explanation": [
       {
-        "say": {
-          "label": "<p><eval>game.currentFieldIndex</eval></p>"
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1498526"
         }
       },
       {
         "say": {
-          "label": "<p>Current Field: <eval>lastTurn.newField</eval></p>"
+          "label": "<p>This is no ordinary snakes and ladders tease</p>"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Normally you follow a linear path up to end</p>"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>With ladders that let you skip fields and snakes that make you move back</p>"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>In this tease you do not follow one path but move in circles</p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1497210"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>But because one circle is boring it is three instead</p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1498504"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>One small inner circle</p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1498505"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>a bigger one around it </p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1498506"
+        }
+      },
+      {
+        "say": {
+          "label": "<p> and the biggest one surrounding the other two</p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1497210"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>You will start in the inner circle at field 1 </p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1498507"
+        }
+      },
+      {
+        "say": {
+          "label": "<p><span style=\"color: #4caf50\">Ladders</span><span style=\"color: #ffffff\"> let you advance onto the next ring</span></p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1498509"
+        }
+      },
+      {
+        "say": {
+          "label": "<p><span style=\"color: #f44336\">Snakes</span><span style=\"color: #ffffff\"> force you to go back one ring</span></p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1498508"
+        }
+      },
+      {
+        "say": {
+          "label": "<p><span style=\"color: #ffffff\">The </span><span style=\"color: #ba68c8\">purple fields</span><span style=\"color: #ffffff\"> reverse your moving direction - the good old uno reverse card</span></p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1497210"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Since it is a circle you need to <span style=\"color: #ffeb3b\"><u><em>directly land on the fields</em></u></span> to activate their effects</p>"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Simply passing over a ladder is not enough to advance</p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1498502"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Don&#39;t worry I did the math (https://github.com/BrightSprinkler/SnakesAndLetterWheelProbabilities)</p>"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>90% of 1.000.000 simulated games were able to finish within the first 200 dice rolls</p>"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>So it should not take you forever ;)</p>"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1497210"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>To end the tease and earn your orgasm you will need to land on field 25 - landing on it using the ladder does not count tho.</p>"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>That&#39;s it! Simple right!</p>"
+        }
+      },
+      {
+        "goto": {
+          "target": "start"
         }
       }
     ],
@@ -106,360 +255,640 @@
           "target": "start"
         }
       }
+    ],
+    "fieldImage1": [
+      {
+        "image": {
+          "locator": "file:field1.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "currentFieldImage": [
+      {
+        "eval": {
+          "script": "imageFieldStack.push(\"fieldImage\"+ lastTurn.newField);\r\n\r\nif (imageFieldStack.length > 0) {\r\n  isSlideShow = false;\r\n  pages.goto(imageFieldStack.pop());\r\n}\r\n"
+        }
+      },
+      {
+        "goto": {
+          "target": "advance"
+        }
+      }
+    ],
+    "fieldSlideShow": [
+      {
+        "eval": {
+          "script": "if (imageFieldStack.length > 0) {\r\n  isSlideShow = true;\r\n  pages.goto( imageFieldStack.pop());\r\n}\r\n"
+        }
+      },
+      {
+        "eval": {
+          "script": "// TODO: Go to current field tease"
+        }
+      }
+    ],
+    "advance": [
+      {
+        "say": {
+          "label": "<p>Current Field: <eval>lastTurn.newField</eval></p><p>Direction: <eval>!lastTurn.isReverse? &quot;Clockwise&quot; : &quot;Counterclockwise&quot; </eval></p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Rolling dice ...</p>",
+          "mode": "instant"
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:dice.mp3"
+        }
+      },
+      {
+        "timer": {
+          "duration": "2s",
+          "style": "hidden",
+          "isAsync": true
+        }
+      }
+    ],
+    "fieldImage2": [
+      {
+        "image": {
+          "locator": "file:field2.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage3": [
+      {
+        "image": {
+          "locator": "file:field3.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage4": [
+      {
+        "image": {
+          "locator": "file:field4.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage5": [
+      {
+        "image": {
+          "locator": "file:field5.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage6": [
+      {
+        "image": {
+          "locator": "file:field6.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage7": [
+      {
+        "image": {
+          "locator": "file:field7.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage8": [
+      {
+        "image": {
+          "locator": "file:field8.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage9": [
+      {
+        "image": {
+          "locator": "file:field9.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage10": [
+      {
+        "image": {
+          "locator": "file:field10.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage11": [
+      {
+        "image": {
+          "locator": "file:field11.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage12": [
+      {
+        "image": {
+          "locator": "file:field12.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage13": [
+      {
+        "image": {
+          "locator": "file:field13.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage14": [
+      {
+        "image": {
+          "locator": "file:field4.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage15": [
+      {
+        "image": {
+          "locator": "file:field15.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage16": [
+      {
+        "image": {
+          "locator": "file:field16.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage17": [
+      {
+        "image": {
+          "locator": "file:field17.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage18": [
+      {
+        "image": {
+          "locator": "file:field18.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage19": [
+      {
+        "image": {
+          "locator": "file:field19.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage20": [
+      {
+        "image": {
+          "locator": "file:field20.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage21": [
+      {
+        "image": {
+          "locator": "file:field21.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage22": [
+      {
+        "image": {
+          "locator": "file:field22.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage23": [
+      {
+        "image": {
+          "locator": "file:field23.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage24": [
+      {
+        "image": {
+          "locator": "file:field24.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage25": [
+      {
+        "image": {
+          "locator": "file:field25.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage26": [
+      {
+        "image": {
+          "locator": "file:field26.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage27": [
+      {
+        "image": {
+          "locator": "file:field27.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage28": [
+      {
+        "image": {
+          "locator": "file:field28.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage29": [
+      {
+        "image": {
+          "locator": "file:field29.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage30": [
+      {
+        "image": {
+          "locator": "file:field30.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage31": [
+      {
+        "image": {
+          "locator": "file:field31.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage32": [
+      {
+        "image": {
+          "locator": "file:field32.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage33": [
+      {
+        "image": {
+          "locator": "file:field33.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage34": [
+      {
+        "image": {
+          "locator": "file:field34.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage35": [
+      {
+        "image": {
+          "locator": "file:field35.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage36": [
+      {
+        "image": {
+          "locator": "file:field36.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage37": [
+      {
+        "image": {
+          "locator": "file:field37.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage38": [
+      {
+        "image": {
+          "locator": "file:field38.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage39": [
+      {
+        "image": {
+          "locator": "file:field39.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage40": [
+      {
+        "image": {
+          "locator": "file:field40.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage41": [
+      {
+        "image": {
+          "locator": "file:field41.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage42": [
+      {
+        "image": {
+          "locator": "file:field42.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage43": [
+      {
+        "image": {
+          "locator": "file:field43.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage44": [
+      {
+        "image": {
+          "locator": "file:field44.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage45": [
+      {
+        "image": {
+          "locator": "file:field45.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage46": [
+      {
+        "image": {
+          "locator": "file:field46.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage47": [
+      {
+        "image": {
+          "locator": "file:field47.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
+    ],
+    "fieldImage48": [
+      {
+        "image": {
+          "locator": "file:field48.jpg"
+        }
+      },
+      {
+        "eval": {
+          "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
+        }
+      }
     ]
   },
   "modules": {
-    "audio": {}
+    "audio": {},
+    "notification": {}
   },
   "galleries": {
-    "0ad9a1b6-872f-4526-9af2-c6a725cb1e88": {
-      "name": "Field",
-      "images": [
-        {
-          "id": 1497210,
-          "hash": "5a755ae44f4d254a4348a397f5e526735d5ac8e3",
-          "size": 500356,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497211,
-          "hash": "37fe8656e9db7702fc3b25c7042542dafcb751eb",
-          "size": 502338,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497212,
-          "hash": "edfff4fcdc27f8240dbf6f6109c70f69b269360c",
-          "size": 508008,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497213,
-          "hash": "22c842568544c029f658ed09e3c6fa77771b3d56",
-          "size": 501869,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497214,
-          "hash": "ba477889dab6cd9062d4415be1d8fb405d437a88",
-          "size": 507925,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497215,
-          "hash": "e806b93e90836fb0d3dd86a34688885e2ef78c22",
-          "size": 503273,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497216,
-          "hash": "9accab1ab5562fbef7de2fa141115901e7a79b70",
-          "size": 507933,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497217,
-          "hash": "438378cd0925f2def6eeac618975fda91a5d85b3",
-          "size": 501913,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497218,
-          "hash": "1f15064a1dfc18fef92635d48b5ca35293843d25",
-          "size": 507948,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497219,
-          "hash": "6e0028eb1d5414167edef5578ee482f910c05355",
-          "size": 502235,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497220,
-          "hash": "07192fb5e9f447558ebc7c5081d4a809738d9d64",
-          "size": 508109,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497221,
-          "hash": "dcf9b9ef3f89942d4aa5a09b38a090be55c6d5b6",
-          "size": 508459,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497222,
-          "hash": "5bf9b14afa930ad48f22874bbfbb6e86f75fc68c",
-          "size": 508491,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497223,
-          "hash": "ff1110406a9f6047dab3185435dd85b55c390564",
-          "size": 501781,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497224,
-          "hash": "6763053a919f64d0844503fdf0bbc5e6bd59f238",
-          "size": 508481,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497225,
-          "hash": "a54eedc311a638c2d6deae8d67343c87ea3aab08",
-          "size": 508413,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497226,
-          "hash": "b34f85e2e9390a3182efe4f5b5da06d9fc9fdbd0",
-          "size": 507994,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497227,
-          "hash": "2600d37f5e8799d137a38434bd30780fdd6c3b4b",
-          "size": 503034,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497228,
-          "hash": "97e44ac5ced0c8da8984a9f998b47af9a4e70e8d",
-          "size": 508077,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497229,
-          "hash": "e409e451acbb33ad8e0c5f65620c393b62abd1d3",
-          "size": 508319,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497230,
-          "hash": "324368309596c78b1bb15ffbe612a64f2c10ded8",
-          "size": 507973,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497231,
-          "hash": "58e98a5226f036ac3573bb4c78ff1ce4f83df87e",
-          "size": 501649,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497232,
-          "hash": "20a79d22dc99d03e30dfb22d89cc8490b3c86f04",
-          "size": 507970,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497233,
-          "hash": "0bfb2363f74764f2f83ea6fd8bb3e0248a1c7594",
-          "size": 508338,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497234,
-          "hash": "ff9c5045dcd8d313c7c4c3a84d207093d983e657",
-          "size": 507971,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497235,
-          "hash": "c7e42c239d6b5a4995c9220520351ea0039e9115",
-          "size": 502175,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497236,
-          "hash": "706e1844d9ce5fd464c2da8c06e6bab05a3d1932",
-          "size": 508518,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497237,
-          "hash": "2aecba67db37d5210d68861a100679abbd0eeb0f",
-          "size": 508950,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497238,
-          "hash": "948dfabe62f5b8e233da2395195da671acf06cab",
-          "size": 508928,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497239,
-          "hash": "91fb837c84f8137c80fa4fd39e95a65672ba4a0a",
-          "size": 508949,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497240,
-          "hash": "1aaec9277faba051c76f5d88b71e74801eb805db",
-          "size": 508563,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497241,
-          "hash": "198817f5d341d1a9d70f02e59889d74225ba1471",
-          "size": 501732,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497242,
-          "hash": "6e0edd662b4d368ead7069aeb899a9732e8c6c3c",
-          "size": 508537,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497243,
-          "hash": "8a87924766a0f92ab620181a25bebcea2a508e6c",
-          "size": 508869,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497244,
-          "hash": "f02221d0b2a13146dad951c4fbd9790f4bf37489",
-          "size": 508962,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497245,
-          "hash": "a1c70eb28fd4d2319ccdd277b237551391dae6dd",
-          "size": 508550,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497246,
-          "hash": "a3c0c3cc1867162a91eb929e646507ed1ea1aa4d",
-          "size": 509113,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497247,
-          "hash": "98d1a9f271b5d6bc760b47b92d74597f3d96d99e",
-          "size": 502906,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497248,
-          "hash": "a1d00dee1bb656f394a940835d08e496480ab784",
-          "size": 508987,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497249,
-          "hash": "f8e8e0b87f83da47703e14bd4628435d6b3b749e",
-          "size": 508916,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497250,
-          "hash": "1c77a505c535bb386030bec296054cff42e14510",
-          "size": 509070,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497251,
-          "hash": "55b708348ea5433352a13cba01dce1691dbe1c13",
-          "size": 508838,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497252,
-          "hash": "922ca9ec4749b9f34c0f471b80b58a13280854c5",
-          "size": 508603,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497253,
-          "hash": "8f652e77f6bdc9d2fcb67b99ab9a28b355130c81",
-          "size": 501738,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497254,
-          "hash": "983c1e411ca0f9a87874e7e89cd796e412856c99",
-          "size": 508577,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497255,
-          "hash": "fccb83babd4fcf6b565cf828d11d6de2f1d3c9d3",
-          "size": 508876,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497256,
-          "hash": "f8526875b3c5de9853485a3fb60aafdd1cf2338a",
-          "size": 509030,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497257,
-          "hash": "1ef6271299b8f0d46c52e6f52633e785b295870a",
-          "size": 508978,
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "id": 1497258,
-          "hash": "37863511bb678f4ada468b0a45a244f2d2115343",
-          "size": 508498,
-          "width": 1080,
-          "height": 1080
-        }
-      ]
-    },
     "5d08b1ec-e760-402d-ac5b-884242e0eb81": {
       "name": "Menu Images",
       "images": [
@@ -476,6 +905,69 @@
           "size": 582252,
           "width": 1080,
           "height": 1080
+        },
+        {
+          "id": 1498502,
+          "hash": "25a5b0a2bdead3f2bc17843a997fb1512b87dcaf",
+          "size": 145741,
+          "width": 491,
+          "height": 558
+        },
+        {
+          "id": 1498504,
+          "hash": "03c2eefc2527c8cb36fabda4c6af48764e518a31",
+          "size": 361110,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1498505,
+          "hash": "68a4f8908c6f2a8399e18610a2e23cb21d797b7d",
+          "size": 392876,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1498506,
+          "hash": "a527dc153c069c87c9ead50504c48621ccca88ef",
+          "size": 413384,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1498507,
+          "hash": "d2849a4da8efb83c312015ba0f35ee3c465d28ec",
+          "size": 441124,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1498508,
+          "hash": "5b7345a4d7a5837fd2f934148e94b255e8901a6e",
+          "size": 437531,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1498509,
+          "hash": "3e75184cfb44f32633a1e8656075739371a83f4c",
+          "size": 441287,
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "id": 1498526,
+          "hash": "80608f6e69d5088042e0f8f941494847ed117fee",
+          "size": 911787,
+          "width": 1600,
+          "height": 1600
+        },
+        {
+          "id": 1497210,
+          "hash": "5a755ae44f4d254a4348a397f5e526735d5ac8e3",
+          "size": 500356,
+          "width": 1080,
+          "height": 1080
         }
       ]
     }
@@ -486,18 +978,408 @@
         "type": "gallery",
         "mimeType": "image/jpeg",
         "galleryId": "5d08b1ec-e760-402d-ac5b-884242e0eb81",
-        "url": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1497348",
-        "imageId": 1497348
+        "url": "gallery:5d08b1ec-e760-402d-ac5b-884242e0eb81/1497210",
+        "imageId": 1497210
       },
       {
-        "type": "gallery",
+        "type": "pattern",
         "mimeType": "image/jpeg",
-        "galleryId": "0ad9a1b6-872f-4526-9af2-c6a725cb1e88",
-        "url": "gallery:0ad9a1b6-872f-4526-9af2-c6a725cb1e88/1497210",
-        "imageId": 1497210
+        "pattern": "*.jpg",
+        "url": "file:*.jpg"
       }
     ]
   },
-  "init": "var lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false };\r\nvar game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) === -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.length; i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n      }\r\n    \r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false };\r\n      var roll = game.rollDice();\r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n    \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      console.warn(result);\r\n      lastTurn = result;\r\n      return result;\r\n    }\r\n  };",
-  "files": {}
+  "init": "var imageFieldStack = [];\r\nvar isSlideShow = false;\r\nvar lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false };\r\nvar game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) === -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.length; i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n      }\r\n    \r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false };\r\n      var roll = game.rollDice();\r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n    \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      console.warn(result);\r\n      lastTurn = result;\r\n      return result;\r\n    }\r\n  };",
+  "files": {
+    "field1.jpg": {
+      "id": 1497211,
+      "hash": "37fe8656e9db7702fc3b25c7042542dafcb751eb",
+      "size": 502338,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field2.jpg": {
+      "id": 1497212,
+      "hash": "edfff4fcdc27f8240dbf6f6109c70f69b269360c",
+      "size": 508008,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field3.jpg": {
+      "id": 1497213,
+      "hash": "22c842568544c029f658ed09e3c6fa77771b3d56",
+      "size": 501869,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field4.jpg": {
+      "id": 1497214,
+      "hash": "ba477889dab6cd9062d4415be1d8fb405d437a88",
+      "size": 507925,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field5.jpg": {
+      "id": 1497215,
+      "hash": "e806b93e90836fb0d3dd86a34688885e2ef78c22",
+      "size": 503273,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field6.jpg": {
+      "id": 1497216,
+      "hash": "9accab1ab5562fbef7de2fa141115901e7a79b70",
+      "size": 507933,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field7.jpg": {
+      "id": 1497217,
+      "hash": "438378cd0925f2def6eeac618975fda91a5d85b3",
+      "size": 501913,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field8.jpg": {
+      "id": 1497218,
+      "hash": "1f15064a1dfc18fef92635d48b5ca35293843d25",
+      "size": 507948,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field9.jpg": {
+      "id": 1497219,
+      "hash": "6e0028eb1d5414167edef5578ee482f910c05355",
+      "size": 502235,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field10.jpg": {
+      "id": 1497220,
+      "hash": "07192fb5e9f447558ebc7c5081d4a809738d9d64",
+      "size": 508109,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field11.jpg": {
+      "id": 1497221,
+      "hash": "dcf9b9ef3f89942d4aa5a09b38a090be55c6d5b6",
+      "size": 508459,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field12.jpg": {
+      "id": 1497222,
+      "hash": "5bf9b14afa930ad48f22874bbfbb6e86f75fc68c",
+      "size": 508491,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field13.jpg": {
+      "id": 1497223,
+      "hash": "ff1110406a9f6047dab3185435dd85b55c390564",
+      "size": 501781,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field14.jpg": {
+      "id": 1497224,
+      "hash": "6763053a919f64d0844503fdf0bbc5e6bd59f238",
+      "size": 508481,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field15.jpg": {
+      "id": 1497225,
+      "hash": "a54eedc311a638c2d6deae8d67343c87ea3aab08",
+      "size": 508413,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field16.jpg": {
+      "id": 1497226,
+      "hash": "b34f85e2e9390a3182efe4f5b5da06d9fc9fdbd0",
+      "size": 507994,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field17.jpg": {
+      "id": 1497227,
+      "hash": "2600d37f5e8799d137a38434bd30780fdd6c3b4b",
+      "size": 503034,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field18.jpg": {
+      "id": 1497228,
+      "hash": "97e44ac5ced0c8da8984a9f998b47af9a4e70e8d",
+      "size": 508077,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field19.jpg": {
+      "id": 1497229,
+      "hash": "e409e451acbb33ad8e0c5f65620c393b62abd1d3",
+      "size": 508319,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field20.jpg": {
+      "id": 1497230,
+      "hash": "324368309596c78b1bb15ffbe612a64f2c10ded8",
+      "size": 507973,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field21.jpg": {
+      "id": 1497231,
+      "hash": "58e98a5226f036ac3573bb4c78ff1ce4f83df87e",
+      "size": 501649,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field22.jpg": {
+      "id": 1497232,
+      "hash": "20a79d22dc99d03e30dfb22d89cc8490b3c86f04",
+      "size": 507970,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field23.jpg": {
+      "id": 1497233,
+      "hash": "0bfb2363f74764f2f83ea6fd8bb3e0248a1c7594",
+      "size": 508338,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field24.jpg": {
+      "id": 1497234,
+      "hash": "ff9c5045dcd8d313c7c4c3a84d207093d983e657",
+      "size": 507971,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field25.jpg": {
+      "id": 1497235,
+      "hash": "c7e42c239d6b5a4995c9220520351ea0039e9115",
+      "size": 502175,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field26.jpg": {
+      "id": 1497236,
+      "hash": "706e1844d9ce5fd464c2da8c06e6bab05a3d1932",
+      "size": 508518,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field27.jpg": {
+      "id": 1497237,
+      "hash": "2aecba67db37d5210d68861a100679abbd0eeb0f",
+      "size": 508950,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field28.jpg": {
+      "id": 1497238,
+      "hash": "948dfabe62f5b8e233da2395195da671acf06cab",
+      "size": 508928,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field29.jpg": {
+      "id": 1497239,
+      "hash": "91fb837c84f8137c80fa4fd39e95a65672ba4a0a",
+      "size": 508949,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field30.jpg": {
+      "id": 1497240,
+      "hash": "1aaec9277faba051c76f5d88b71e74801eb805db",
+      "size": 508563,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field31.jpg": {
+      "id": 1497241,
+      "hash": "198817f5d341d1a9d70f02e59889d74225ba1471",
+      "size": 501732,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field32.jpg": {
+      "id": 1497242,
+      "hash": "6e0edd662b4d368ead7069aeb899a9732e8c6c3c",
+      "size": 508537,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field33.jpg": {
+      "id": 1497243,
+      "hash": "8a87924766a0f92ab620181a25bebcea2a508e6c",
+      "size": 508869,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field34.jpg": {
+      "id": 1497244,
+      "hash": "f02221d0b2a13146dad951c4fbd9790f4bf37489",
+      "size": 508962,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field35.jpg": {
+      "id": 1497245,
+      "hash": "a1c70eb28fd4d2319ccdd277b237551391dae6dd",
+      "size": 508550,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field36.jpg": {
+      "id": 1497246,
+      "hash": "a3c0c3cc1867162a91eb929e646507ed1ea1aa4d",
+      "size": 509113,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field37.jpg": {
+      "id": 1497247,
+      "hash": "98d1a9f271b5d6bc760b47b92d74597f3d96d99e",
+      "size": 502906,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field38.jpg": {
+      "id": 1497248,
+      "hash": "a1d00dee1bb656f394a940835d08e496480ab784",
+      "size": 508987,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field39.jpg": {
+      "id": 1497249,
+      "hash": "f8e8e0b87f83da47703e14bd4628435d6b3b749e",
+      "size": 508916,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field40.jpg": {
+      "id": 1497250,
+      "hash": "1c77a505c535bb386030bec296054cff42e14510",
+      "size": 509070,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field41.jpg": {
+      "id": 1497251,
+      "hash": "55b708348ea5433352a13cba01dce1691dbe1c13",
+      "size": 508838,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field42.jpg": {
+      "id": 1497252,
+      "hash": "922ca9ec4749b9f34c0f471b80b58a13280854c5",
+      "size": 508603,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field43.jpg": {
+      "id": 1497253,
+      "hash": "8f652e77f6bdc9d2fcb67b99ab9a28b355130c81",
+      "size": 501738,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field44.jpg": {
+      "id": 1497254,
+      "hash": "983c1e411ca0f9a87874e7e89cd796e412856c99",
+      "size": 508577,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field45.jpg": {
+      "id": 1497255,
+      "hash": "fccb83babd4fcf6b565cf828d11d6de2f1d3c9d3",
+      "size": 508876,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field46.jpg": {
+      "id": 1497256,
+      "hash": "f8526875b3c5de9853485a3fb60aafdd1cf2338a",
+      "size": 509030,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field47.jpg": {
+      "id": 1497257,
+      "hash": "1ef6271299b8f0d46c52e6f52633e785b295870a",
+      "size": 508978,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "field48.jpg": {
+      "id": 1497258,
+      "hash": "37863511bb678f4ada468b0a45a244f2d2115343",
+      "size": 508498,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
+    },
+    "dice.mp3": {
+      "id": 1498728,
+      "hash": "21ffb1448723441cc7280215f785a1d52a6c4a87",
+      "size": 18561,
+      "type": "audio/mpeg"
+    }
+  }
 }
