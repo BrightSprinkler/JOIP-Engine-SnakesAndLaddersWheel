@@ -1,14 +1,13 @@
 - You land here if you edge without beeing asked to
 - You land here if you cum withou beeing asked to
 
+https://www.reddit.com/r/Bremerton_Chan/
+
 Edge:
 
 Messages.Add("Hands off you filthy dick!", "#b65fcf", true);
 
 1 Visit
-
-Messages.Add("Hello there, sweet heart!", "#b65fcf", true);
-Messages.Add("How are you doing?")
 
     Messages.Add("We haven't met yet!", "#b65fcf", true);
     Messages.Add("I am the guardian of this maze.", "#b65fcf", true);

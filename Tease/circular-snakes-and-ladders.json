@@ -33,16 +33,6 @@
               "color": "#66bb6a"
             },
             {
-              "label": "Explanation",
-              "commands": [
-                {
-                  "goto": {
-                    "target": "explanation"
-                  }
-                }
-              ]
-            },
-            {
               "label": "Disclaimer",
               "commands": [
                 {
@@ -52,6 +42,16 @@
                 }
               ],
               "color": "#212121"
+            },
+            {
+              "label": "Explanation",
+              "commands": [
+                {
+                  "goto": {
+                    "target": "explanation"
+                  }
+                }
+              ]
             }
           ]
         }
@@ -269,6 +269,32 @@
       }
     ],
     "currentFieldImage": [
+      {
+        "notification.create": {
+          "buttonCommands": [
+            {
+              "goto": {
+                "target": "punisherOrgasm"
+              }
+            }
+          ],
+          "buttonLabel": "Unallowed Orgasm",
+          "id": "danger zone orgasm"
+        }
+      },
+      {
+        "notification.create": {
+          "buttonCommands": [
+            {
+              "goto": {
+                "target": "punisher"
+              }
+            }
+          ],
+          "buttonLabel": "Unallowed Edge",
+          "id": "danger zone edge"
+        }
+      },
       {
         "eval": {
           "script": "imageFieldStack.push(\"fieldImage\"+ currentTurn.newField);\r\n\r\nif (imageFieldStack.length > 0) {\r\n  isSlideShow = false;\r\n  pages.goto(imageFieldStack.pop());\r\n}\r\n"
@@ -1377,6 +1403,479 @@
           "target": "currentFieldImage"
         }
       }
+    ],
+    "punisher": [
+      {
+        "image": {
+          "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/1500089"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Hands off you filthy dick!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "if": {
+          "condition": "punisherVisits === 0",
+          "commands": [
+            {
+              "say": {
+                "label": "<p>We haven&#39;t met yet!</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>I am the guardian of this maze</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Everyone that does not follow its rules will be punished by me</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>You hopefully learn from your mistakes...</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/1500084"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Go ahead and grab a string to tie up your balls.</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>I will wait...</p>",
+                "mode": "pause"
+              }
+            },
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Haha, your balls already look like they hurt.</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>From now on while you are in this maze you have to eat any precum that comes up</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>In fact, how about you eat some precum right now?</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Squeeze your precum out and eat all of it</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>I just wanted to remind you, that your balls will stay tied</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Next time you punishment for edging wont be that nice</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "if": {
+          "condition": "punisherVisits === 1",
+          "commands": [
+            {
+              "say": {
+                "label": "<p>It appears that this is the seconds time that I have noticed inappropriate behavior!</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>This is my last warning!</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>The next time you sin will be the last time!</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Time for your punishment</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Start slapping your balls to the beat</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "audio.play": {
+                "locator": "file:60-bpm.mp3",
+                "id": "beat"
+              }
+            },
+            {
+              "timer": {
+                "duration": "20s"
+              }
+            },
+            {
+              "eval": {
+                "script": "Sound.get(\"beat\").stop();"
+              }
+            },
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Faster and harder!</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "audio.play": {
+                "locator": "file:90-bpm.mp3",
+                "id": "beat"
+              }
+            },
+            {
+              "timer": {
+                "duration": "20s"
+              }
+            },
+            {
+              "eval": {
+                "script": "Sound.get(\"beat\").stop();"
+              }
+            },
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Even faster and harder!</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "audio.play": {
+                "locator": "file:120-bpm.mp3",
+                "id": "beat"
+              }
+            },
+            {
+              "timer": {
+                "duration": "20s",
+                "style": "normal"
+              }
+            },
+            {
+              "eval": {
+                "script": "Sound.get(\"beat\").stop();"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>That is it for now</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "if": {
+          "condition": "punisherVisits === 2",
+          "commands": [
+            {
+              "say": {
+                "label": "<p>I told you, didn&#39;t I?</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Time for pain!</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Start squeezing your balls</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+              }
+            },
+            {
+              "timer": {
+                "duration": "20s",
+                "style": "secret"
+              }
+            },
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Harder</p>",
+                "mode": "instant"
+              }
+            },
+            {
+              "timer": {
+                "duration": "20s",
+                "style": "secret"
+              }
+            },
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>I said: Squeeze harder!</p>",
+                "mode": "instant"
+              }
+            },
+            {
+              "timer": {
+                "duration": "20s",
+                "style": "secret"
+              }
+            },
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Stop squeezing. Slap them really fast instead!</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "audio.play": {
+                "locator": "file:240-bpm.mp3",
+                "id": "beat"
+              }
+            },
+            {
+              "timer": {
+                "duration": "20s",
+                "style": "secret"
+              }
+            },
+            {
+              "eval": {
+                "script": "Sound.get(\"beat\").stop();"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Now I want one punch as hard as you can muster</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Tell me when you are ready to go on</p>",
+                "mode": "pause"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Since you did not respect my last warning, your journey ends here and now</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>It is your fault for breaking the rules</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "end": {}
+            }
+          ],
+          "elseCommands": [
+            {
+              "eval": {
+                "script": "punisherVisits += 1;"
+              }
+            },
+            {
+              "goto": {
+                "target": "currentFieldImage"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "punisherOrgasm": [
+      {
+        "notification.remove": {
+          "id": "punisher edge"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/1500041"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Ruin that orgasm!</p>",
+          "mode": "custom",
+          "duration": "20s",
+          "allowSkip": true
+        }
+      },
+      {
+        "if": {
+          "condition": "punisherVisits === 0",
+          "commands": [
+            {
+              "image": {
+                "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/1500042"
+              }
+            },
+            {
+              "say": {
+                "label": "<p>We haven&#39;t met yet!</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>I am the guardian of this tease</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Everyone that does not follow its rules will be punished by me</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            },
+            {
+              "say": {
+                "label": "<p>Hopefully you learn from your mistakes...</p>",
+                "mode": "autoplay",
+                "allowSkip": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Since you already came, your journey ends here and now.</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/1500043"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>It is your fault for breaking the rules</p>",
+          "mode": "custom",
+          "duration": "10s",
+          "allowSkip": true
+        }
+      },
+      {
+        "end": {}
+      }
     ]
   },
   "modules": {
@@ -1559,10 +2058,105 @@
           "height": 894
         }
       ]
+    },
+    "e3516b6e-2899-413e-87fd-72eec6f85727": {
+      "name": "punisher",
+      "images": [
+        {
+          "id": 1500041,
+          "hash": "785563f25226882c1f7f927b9a2045232e1c649c",
+          "size": 985442,
+          "width": 1000,
+          "height": 1414
+        },
+        {
+          "id": 1500042,
+          "hash": "377dca260248954e707daa3ce987bdf2d0cd5f96",
+          "size": 928254,
+          "width": 2521,
+          "height": 3800
+        },
+        {
+          "id": 1500043,
+          "hash": "961e2351f9e9b7ed3d9e677f4963d019b508fc36",
+          "size": 965275,
+          "width": 1447,
+          "height": 2046
+        },
+        {
+          "id": 1500081,
+          "hash": "3de34021a1bf0e88d441d14be16f042d1ae32386",
+          "size": 391237,
+          "width": 1800,
+          "height": 2400
+        },
+        {
+          "id": 1500082,
+          "hash": "3f8376ab57d29a5b12c72efa9329d9c1ec9462a5",
+          "size": 266959,
+          "width": 1500,
+          "height": 2428
+        },
+        {
+          "id": 1500083,
+          "hash": "4a432628d72f52c73369a31156f04cbfd4c8fcd6",
+          "size": 59446,
+          "width": 617,
+          "height": 881
+        },
+        {
+          "id": 1500084,
+          "hash": "1db566b3acf3449a5c13ffb88381465a38de7495",
+          "size": 381556,
+          "width": 752,
+          "height": 1053
+        },
+        {
+          "id": 1500085,
+          "hash": "16d115d7173869f5acd64652aa2797d52c74f634",
+          "size": 2207378,
+          "width": 1764,
+          "height": 2830
+        },
+        {
+          "id": 1500086,
+          "hash": "55f3bf0154261ccc1d6dc8cc9e030240dd4c57df",
+          "size": 877348,
+          "width": 1250,
+          "height": 852
+        },
+        {
+          "id": 1500087,
+          "hash": "d97a8ac2f473751087ac56a7206fdb3520157ae5",
+          "size": 1506654,
+          "width": 1400,
+          "height": 2036
+        },
+        {
+          "id": 1500088,
+          "hash": "6798acb37cda3bdc7b5a3cb4339d620a6ea9a909",
+          "size": 699645,
+          "width": 2714,
+          "height": 4093
+        },
+        {
+          "id": 1500089,
+          "hash": "f3b61c778c068efe322371e948d5957b90190566",
+          "size": 1702257,
+          "width": 1191,
+          "height": 1962
+        }
+      ]
     }
   },
   "editor": {
     "recentImages": [
+      {
+        "type": "gallery",
+        "mimeType": "image/jpeg",
+        "galleryId": "e3516b6e-2899-413e-87fd-72eec6f85727",
+        "url": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+      },
       {
         "type": "gallery",
         "mimeType": "image/jpeg",
@@ -1592,7 +2186,7 @@
       }
     ]
   },
-  "init": "var imageFieldStack = [];\r\nvar isSlideShow = false;\r\nvar lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar currentTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) !== -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.length; i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n      }\r\n    \r\n      lastTurn = currentTurn;\r\n\r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false, isInReverse: game.isInReverse };\r\n      var roll = game.rollDice();\r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n    \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      currentTurn = result;\r\n\r\n      console.warn(lastTurn, currentTurn, game);\r\n\r\n      return result;\r\n    }\r\n  };",
+  "init": "var punisherVisits = 0;\r\nvar imageFieldStack = [];\r\nvar isSlideShow = false;\r\nvar lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar currentTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) !== -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.length; i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n      }\r\n    \r\n      lastTurn = currentTurn;\r\n\r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false, isInReverse: game.isInReverse };\r\n      var roll = game.rollDice();\r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n    \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      currentTurn = result;\r\n\r\n      console.warn(lastTurn, currentTurn, game);\r\n\r\n      return result;\r\n    }\r\n  };",
   "files": {
     "field1.jpg": {
       "id": 1497211,

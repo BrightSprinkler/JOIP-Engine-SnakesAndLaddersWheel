@@ -1,3 +1,4 @@
+var punisherVisits = 0;
 var imageFieldStack = [];
 var isSlideShow = false;
 var lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };
