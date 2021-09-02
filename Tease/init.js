@@ -1,7 +1,7 @@
 var imageFieldStack = [];
 var isSlideShow = false;
-var lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false };
-var currentTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false };
+var lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };
+var currentTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };
 var game = {
     currentFieldIndex: 0,
     isInReverse: false,
@@ -37,9 +37,9 @@ var game = {
       return ring.ladderIndex === index;
     },
     isOnReverse: function(index, ring) {
-      return ring.reverseIndex.indexOf(index) === -1;
+      return ring.reverseIndex.indexOf(index) !== -1;
     },
-    advance: function(currentField, fieldCount, reverse, ring) {
+    advance: function(currentField, fieldCount,reverse, ring) {
       for (var i = 0; i < fieldCount; i++) {
         currentField = reverse ? currentField - 1 : currentField + 1;
   
@@ -73,7 +73,7 @@ var game = {
     
       lastTurn = currentTurn;
 
-      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false };
+      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false, isInReverse: game.isInReverse };
       var roll = game.rollDice();
       var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);
     
@@ -108,8 +108,10 @@ var game = {
   
       result.roll = roll;
       result.newField = newField + 1;
-      console.warn(result);
       currentTurn = result;
+
+      console.warn(lastTurn, currentTurn, game);
+
       return result;
     }
   };

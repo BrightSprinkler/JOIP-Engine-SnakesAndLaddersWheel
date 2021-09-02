@@ -58,7 +58,8 @@ _see Probabilities for me details_
 
 Win field = both characters from ladder and snake
 
-![Characters](https://raw.githubusercontent.com/BrightSprinkler/SnakesAndLaddersWheel/master/Characters.png)
+1 Hidden char that appears if you edge or cum without permission
+ends tease after 3 unlawful edges
 
 **!! SPOILER !!**
 [Characters and their tasks](Characters.md)

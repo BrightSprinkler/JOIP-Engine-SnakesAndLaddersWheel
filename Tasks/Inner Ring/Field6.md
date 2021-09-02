@@ -1,7 +1,5 @@
-Stroke for us!
+https://preview.redd.it/l959qy9p50l71.jpg?width=640&crop=smart&auto=webp&s=725efa400655088e6077ac2922445d1cf37d8483
 
-- 50 strokes in 30 seconds
+You still hitting?
 
-that was to easy
-
-- 80 strokes in 30 seconds
+- 75 normal strokes in 60 seconds

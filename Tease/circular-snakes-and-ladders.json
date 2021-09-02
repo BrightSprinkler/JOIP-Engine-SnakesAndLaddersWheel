@@ -271,7 +271,7 @@
     "currentFieldImage": [
       {
         "eval": {
-          "script": "imageFieldStack.push(\"fieldImage\"+ lastTurn.newField);\r\n\r\nif (imageFieldStack.length > 0) {\r\n  isSlideShow = false;\r\n  pages.goto(imageFieldStack.pop());\r\n}\r\n"
+          "script": "imageFieldStack.push(\"fieldImage\"+ currentTurn.newField);\r\n\r\nif (imageFieldStack.length > 0) {\r\n  isSlideShow = false;\r\n  pages.goto(imageFieldStack.pop());\r\n}\r\n"
         }
       },
       {
@@ -283,19 +283,44 @@
     "fieldSlideShow": [
       {
         "eval": {
-          "script": "if (imageFieldStack.length > 0) {\r\n  isSlideShow = true;\r\n  pages.goto( imageFieldStack.pop());\r\n}\r\n"
+          "script": "console.warn(imageFieldStack);"
         }
       },
       {
-        "eval": {
-          "script": "// TODO: Go to current field tease"
+        "if": {
+          "condition": "imageFieldStack.length === 0",
+          "commands": [
+            {
+              "goto": {
+                "target": "handleAdvance"
+              }
+            }
+          ],
+          "elseCommands": [
+            {
+              "audio.play": {
+                "locator": "file:fieldmove.mp3"
+              }
+            },
+            {
+              "timer": {
+                "duration": "0.5s",
+                "style": "hidden"
+              }
+            },
+            {
+              "eval": {
+                "script": "isSlideShow = true;\r\npages.goto(imageFieldStack.shift());"
+              }
+            }
+          ]
         }
       }
     ],
     "advance": [
       {
         "say": {
-          "label": "<p>Current Field: <eval>lastTurn.newField</eval></p><p>Direction: <eval>!lastTurn.isReverse? &quot;Clockwise&quot; : &quot;Counterclockwise&quot; </eval></p>",
+          "label": "<p>Current Field: <eval>currentTurn.newField</eval></p><p>Direction: <eval>!currentTurn.isReverse? &quot;Clockwise&quot; : &quot;Counterclockwise&quot; </eval></p>",
           "mode": "autoplay",
           "allowSkip": true
         }
@@ -314,8 +339,29 @@
       {
         "timer": {
           "duration": "2s",
-          "style": "hidden",
-          "isAsync": true
+          "style": "hidden"
+        }
+      },
+      {
+        "eval": {
+          "script": "game.playTurn();"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>You rolled a <eval>currentTurn.roll</eval></p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "eval": {
+          "script": "var currentField = lastTurn.newField - 1;\r\nvar fieldCount = currentTurn.roll;\r\nvar ring = game.currentRing;\r\nvar reverse = lastTurn.isInReverse;\r\n\r\nfor (var i = 0; i < fieldCount; i++) {\r\n  currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n  if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n  if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n\r\n  imageFieldStack.push(\"fieldImage\"+ (currentField + 1));\r\n}"
+        }
+      },
+      {
+        "goto": {
+          "target": "fieldSlideShow"
         }
       }
     ],
@@ -466,7 +512,7 @@
     "fieldImage14": [
       {
         "image": {
-          "locator": "file:field4.jpg"
+          "locator": "file:field14.jpg"
         }
       },
       {
@@ -882,6 +928,455 @@
           "script": "if (isSlideShow) {\r\n  pages.goto(\"fieldSlideShow\");\r\n} else {\r\n  pages.goto(\"advance\");\r\n}"
         }
       }
+    ],
+    "handleAdvance": [
+      {
+        "if": {
+          "condition": "currentTurn.isLadder",
+          "commands": [
+            {
+              "say": {
+                "label": "<p><span style=\"color: #66bb6a\"><u>You landed on a ladder!</u></span></p>"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "if": {
+          "condition": "currentTurn.isSnake",
+          "commands": [
+            {
+              "say": {
+                "label": "<p><span style=\"color: #f44336\"><u>You landed on a snake!</u></span></p>"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "if": {
+          "condition": "currentTurn.isReverse",
+          "commands": [
+            {
+              "say": {
+                "label": "<p><span style=\"color: #ba68c8\"><u>You landed on reverse!</u></span></p>"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "eval": {
+          "script": "pages.goto(\"fieldTask-\" + currentTurn.newField);"
+        }
+      }
+    ],
+    "fieldTask-2": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1499737"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Stroke for us!</p>",
+          "align": "left",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:90-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s",
+          "style": "normal"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>That was to easy...</p>",
+          "align": "right",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:120-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s",
+          "style": "normal"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-3": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1499759"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Hello there - stroke with reversed hand</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:60-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "59s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-4": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1499760"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Foot boys are so interesting.</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:120-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "30s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-5": [
+      {
+        "image": {
+          "locator": "gallery:000ec140-9857-4365-8fe1-7be47cc385fc/1499902"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>H- Hello! Don&#39;t worry, this is going to be a nice and easy</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>I just want you to watch you stroke that big dick for me</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:000ec140-9857-4365-8fe1-7be47cc385fc/1499900"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Start with slow strokes for my tight pussy.</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:30-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:000ec140-9857-4365-8fe1-7be47cc385fc/1499899"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Faster! </p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:60-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:000ec140-9857-4365-8fe1-7be47cc385fc/1499898"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Now fuck your hand like you want to fuck me. Fast and hard!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:120-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:000ec140-9857-4365-8fe1-7be47cc385fc/1499896"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>That was fun!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-6": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1499804"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>You still hitting?</p>"
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:150-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "60s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-7": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1499810"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>This is so embarrassing</p>"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Come on hurry up!</p>"
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:210-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "25s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-8": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1499846"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>So close but I will never show you my pussy</p>"
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:60-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "45s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-9": [],
+    "fieldTask-10": [],
+    "fieldTask-11": [],
+    "fieldTask-12": [],
+    "fieldTask-13": [],
+    "fieldTask-14": [],
+    "fieldTask-15": [],
+    "fieldTask-16": [],
+    "fieldTask-17": [],
+    "fieldTask-18": [],
+    "fieldTask-19": [],
+    "fieldTask-20": [],
+    "fieldTask-21": [],
+    "fieldTask-22": [],
+    "fieldTask-23": [],
+    "fieldTask-24": [],
+    "fieldTask-25": [],
+    "fieldTask-26": [],
+    "fieldTask-27": [],
+    "fieldTask-28": [],
+    "fieldTask-29": [],
+    "fieldTask-30": [],
+    "fieldTask-31": [],
+    "fieldTask-32": [],
+    "fieldTask-33": [],
+    "fieldTask-34": [],
+    "fieldTask-35": [],
+    "fieldTask-36": [],
+    "fieldTask-37": [],
+    "fieldTask-38": [],
+    "fieldTask-39": [],
+    "fieldTask-40": [],
+    "fieldTask-41": [],
+    "fieldTask-42": [],
+    "fieldTask-43": [],
+    "fieldTask-44": [],
+    "fieldTask-45": [],
+    "fieldTask-46": [],
+    "fieldTask-47": [],
+    "fieldTask-48": [],
+    "fieldTask-49": [],
+    "fieldTask-1": [
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
     ]
   },
   "modules": {
@@ -970,10 +1465,118 @@
           "height": 1080
         }
       ]
+    },
+    "472d95b0-ed21-4bc1-b395-019657ba963b": {
+      "name": "FieldImages",
+      "images": [
+        {
+          "id": 1499737,
+          "hash": "1dc19cd9ef644458d623677022e4fc16d7558372",
+          "size": 139259,
+          "width": 640,
+          "height": 902
+        },
+        {
+          "id": 1499759,
+          "hash": "ad13ea7e90c5f6ed7b981a9128c75e53be8bbdff",
+          "size": 73485,
+          "width": 600,
+          "height": 771
+        },
+        {
+          "id": 1499760,
+          "hash": "97391443baf2464483440d91575e896c228ae8f9",
+          "size": 222894,
+          "width": 960,
+          "height": 796
+        },
+        {
+          "id": 1499804,
+          "hash": "e2a84b49ddf15860eb5ff5ab86126bd4288f6d7a",
+          "size": 111410,
+          "width": 640,
+          "height": 890
+        },
+        {
+          "id": 1499810,
+          "hash": "63cb03f499dd786b459fe02aab9c2fade0e291cc",
+          "size": 267884,
+          "width": 1680,
+          "height": 2406
+        },
+        {
+          "id": 1499846,
+          "hash": "3c0d3b480ae0eac53361ccbfe0e7b05fdc3caabb",
+          "size": 90965,
+          "width": 1080,
+          "height": 741
+        }
+      ]
+    },
+    "000ec140-9857-4365-8fe1-7be47cc385fc": {
+      "name": "Fluttershy",
+      "images": [
+        {
+          "id": 1499896,
+          "hash": "a78a6a484d557218a4493e96a27f0a89464077ea",
+          "size": 101209,
+          "width": 858,
+          "height": 931
+        },
+        {
+          "id": 1499897,
+          "hash": "8332ebfb4a6130ab932aa2a8220d1c165ed92c8e",
+          "size": 147116,
+          "width": 724,
+          "height": 1024
+        },
+        {
+          "id": 1499898,
+          "hash": "809b3dc522508661e615107fa706cc8592510d2e",
+          "size": 343654,
+          "width": 3102,
+          "height": 2505
+        },
+        {
+          "id": 1499899,
+          "hash": "45fc8d25037b3f1a8add7ab1e773e9347c8a1468",
+          "size": 213801,
+          "width": 1024,
+          "height": 1448
+        },
+        {
+          "id": 1499900,
+          "hash": "a1635368c713a59887e306ced58609dddb602dcc",
+          "size": 240770,
+          "width": 2644,
+          "height": 3000
+        },
+        {
+          "id": 1499902,
+          "hash": "5b003b87382b4dbf8068e7f49aac7dac28244de8",
+          "size": 123786,
+          "width": 894,
+          "height": 894
+        }
+      ]
     }
   },
   "editor": {
     "recentImages": [
+      {
+        "type": "gallery",
+        "mimeType": "image/jpeg",
+        "galleryId": "000ec140-9857-4365-8fe1-7be47cc385fc",
+        "url": "gallery:000ec140-9857-4365-8fe1-7be47cc385fc/1499896",
+        "imageId": 1499896
+      },
+      {
+        "type": "gallery",
+        "mimeType": "image/jpeg",
+        "galleryId": "472d95b0-ed21-4bc1-b395-019657ba963b",
+        "url": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1499846",
+        "imageId": 1499846
+      },
       {
         "type": "gallery",
         "mimeType": "image/jpeg",
@@ -989,7 +1592,7 @@
       }
     ]
   },
-  "init": "var imageFieldStack = [];\r\nvar isSlideShow = false;\r\nvar lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false };\r\nvar game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) === -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.length; i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n      }\r\n    \r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false };\r\n      var roll = game.rollDice();\r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n    \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      console.warn(result);\r\n      lastTurn = result;\r\n      return result;\r\n    }\r\n  };",
+  "init": "var imageFieldStack = [];\r\nvar isSlideShow = false;\r\nvar lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar currentTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) !== -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.length; i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n      }\r\n    \r\n      lastTurn = currentTurn;\r\n\r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false, isInReverse: game.isInReverse };\r\n      var roll = game.rollDice();\r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n    \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      currentTurn = result;\r\n\r\n      console.warn(lastTurn, currentTurn, game);\r\n\r\n      return result;\r\n    }\r\n  };",
   "files": {
     "field1.jpg": {
       "id": 1497211,
@@ -1379,6 +1982,60 @@
       "id": 1498728,
       "hash": "21ffb1448723441cc7280215f785a1d52a6c4a87",
       "size": 18561,
+      "type": "audio/mpeg"
+    },
+    "fieldmove.mp3": {
+      "id": 1498749,
+      "hash": "e29596dce05c31f8fcad3583b2cef15df8aa0b3e",
+      "size": 7040,
+      "type": "audio/mpeg"
+    },
+    "30-bpm.mp3": {
+      "id": 1499750,
+      "hash": "010c3f7c8ca3804a034136c893697e0761d905a1",
+      "size": 327093,
+      "type": "audio/mpeg"
+    },
+    "60-bpm.mp3": {
+      "id": 1499751,
+      "hash": "ef8d61f1303dae7ca25e64b1a7b1d95ccf32da7f",
+      "size": 386348,
+      "type": "audio/mpeg"
+    },
+    "90-bpm.mp3": {
+      "id": 1499752,
+      "hash": "c542595755dd45e39e450d821baef4b28b61eb18",
+      "size": 428279,
+      "type": "audio/mpeg"
+    },
+    "120-bpm.mp3": {
+      "id": 1499753,
+      "hash": "9ab53210755733c8c739a2111be1ca322100d613",
+      "size": 455588,
+      "type": "audio/mpeg"
+    },
+    "150-bpm.mp3": {
+      "id": 1499754,
+      "hash": "98b308837e68bc1c1bf2e792d3c07a7b9fd463e0",
+      "size": 505979,
+      "type": "audio/mpeg"
+    },
+    "180-bpm.mp3": {
+      "id": 1499755,
+      "hash": "8d216977556407b2e5d99a1f3e3babf3b74bef1b",
+      "size": 617127,
+      "type": "audio/mpeg"
+    },
+    "210-bpm.mp3": {
+      "id": 1499756,
+      "hash": "24eb0ff86af283c7e4c9cc3d2f883b67e401adad",
+      "size": 713314,
+      "type": "audio/mpeg"
+    },
+    "240-bpm.mp3": {
+      "id": 1499757,
+      "hash": "ab677aee8b2325f65eaa4c6e0a52601d2ec621a7",
+      "size": 687343,
       "type": "audio/mpeg"
     }
   }
