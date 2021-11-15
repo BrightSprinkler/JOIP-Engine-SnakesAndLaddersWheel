@@ -33,6 +33,16 @@
               "color": "#66bb6a"
             },
             {
+              "label": "Explanation",
+              "commands": [
+                {
+                  "goto": {
+                    "target": "explanation"
+                  }
+                }
+              ]
+            },
+            {
               "label": "Disclaimer",
               "commands": [
                 {
@@ -44,14 +54,15 @@
               "color": "#212121"
             },
             {
-              "label": "Explanation",
+              "label": "Inspiration",
               "commands": [
                 {
                   "goto": {
-                    "target": "explanation"
+                    "target": "inspiration"
                   }
                 }
-              ]
+              ],
+              "color": "#212121"
             }
           ]
         }
@@ -185,7 +196,7 @@
       },
       {
         "say": {
-          "label": "<p>Don&#39;t worry I did the math (https://github.com/BrightSprinkler/SnakesAndLetterWheelProbabilities)</p>"
+          "label": "<p>Don&#39;t worry I did the math (<span style=\"color: #42a5f5\"><u>https://github.com/BrightSprinkler/SnakesAndLetterWheelProbabilities</u></span>)</p>"
         }
       },
       {
@@ -240,13 +251,20 @@
       },
       {
         "say": {
-          "label": "<p>This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the authors imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</p>",
+          "label": "<p>This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the author’s imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</p>",
           "mode": "autoplay"
         }
       },
       {
         "say": {
           "label": "<p>Always consider your own safety first. If the tease asks you to do anything you feel is unsafe or could threaten your health, don&#39;t do it. Ensure your wellbeing is paramount at all times.</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>The source code and all used resources can be found here:</p><p><span style=\"color: #42a5f5\"><u>https://github.com/BrightSprinkler/SnakesAndLaddersWheel </u></span></p>",
           "mode": "pause"
         }
       },
@@ -270,6 +288,12 @@
     ],
     "currentFieldImage": [
       {
+        "timer": {
+          "duration": "1s",
+          "style": "hidden"
+        }
+      },
+      {
         "notification.create": {
           "buttonCommands": [
             {
@@ -278,7 +302,7 @@
               }
             }
           ],
-          "buttonLabel": "Unallowed Orgasm",
+          "buttonLabel": "I am cumming",
           "id": "danger zone orgasm"
         }
       },
@@ -291,7 +315,7 @@
               }
             }
           ],
-          "buttonLabel": "Unallowed Edge",
+          "buttonLabel": "I am edging",
           "id": "danger zone edge"
         }
       },
@@ -1366,6 +1390,220 @@
     ],
     "fieldTask-9": [
       {
+        "image": {
+          "locator": "gallery:dd4217fd-ab99-42e7-bccf-59fa58b7ef79/1602000"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Hey there- I&#39;m Emilia</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:dd4217fd-ab99-42e7-bccf-59fa58b7ef79/1602003"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>I may not be that good at this but I&#39;ll have to try my best</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Start stroking your cock slowly for me</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:30-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "29s",
+          "style": "secret"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>How about a little bit faster?</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:60-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "29s",
+          "style": "secret"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:dd4217fd-ab99-42e7-bccf-59fa58b7ef79/1602002"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Im really getting into this...</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>GO FAST NOW!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:150-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "29s",
+          "style": "secret"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Stop! Hands off!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:dd4217fd-ab99-42e7-bccf-59fa58b7ef79/1601998"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Do-don&#39;t look at me like that...</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>I&#39;ve never been naked infront of a guy before...</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Stroke fast again</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:150-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "29s",
+          "style": "secret"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Even fast and get ready to edge once the timer ends!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:180-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s",
+          "style": "normal"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:dd4217fd-ab99-42e7-bccf-59fa58b7ef79/1602006"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>And now <span style=\"color: #ffeb3b\"><strong>edge [SPACE TO CONTINUE]</strong></span></p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>And hands off!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>I was sure this would get you...</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Take a small break before you continue.</p>",
+          "mode": "custom",
+          "duration": "10s"
+        }
+      },
+      {
         "goto": {
           "target": "currentFieldImage"
         }
@@ -1441,20 +1679,789 @@
         }
       }
     ],
-    "fieldTask-12": [],
-    "fieldTask-13": [],
-    "fieldTask-14": [],
-    "fieldTask-15": [],
-    "fieldTask-16": [],
-    "fieldTask-17": [],
-    "fieldTask-18": [],
-    "fieldTask-19": [],
-    "fieldTask-20": [],
-    "fieldTask-21": [],
-    "fieldTask-22": [],
-    "fieldTask-23": [],
-    "fieldTask-24": [],
-    "fieldTask-25": [],
+    "fieldTask-12": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500104"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>I just feel sorry for you</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:60-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "10s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-13": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500105"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>I ain&#39;t got time for you</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Do what you want</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-14": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500106"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>How do you feel about pantyhose?</p>"
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:120-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "59s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-15": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500107"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>I am expecting a show</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:180-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>And now <span style=\"color: #ffeb3b\"><strong>edge [SPACE TO CONTINUE]</strong></span></p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-16": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500108"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Feet turn you on? That&#39;s sad</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:150-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "30s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-17": [
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602017"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Ara Ara! What do we have here?</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Don&#39;t worry your big sister will take care of you~</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602020"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>How about we play a game?</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>When you see a picture of me clothed you mus stroke full speed</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>But if my pussy or nipples are visible you have to stop stroking</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Let&#39;s start!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602018"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>No pussy or nipples in sight. Stroke!</p>",
+          "mode": "instant"
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:240-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s",
+          "style": "secret"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602015"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Stop!</p>",
+          "mode": "custom",
+          "duration": "10s"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602027"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Go again! Stroke super fast!</p>",
+          "mode": "instant"
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:240-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "30s",
+          "style": "secret"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602009"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Stop!</p>",
+          "mode": "custom",
+          "duration": "8s"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602028"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Last one!</p>",
+          "mode": "instant"
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:240-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "10s",
+          "style": "secret"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602014"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>You should be really sensitive after all this stroking </p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Spit on your hand and start palming your cock head</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:60-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s",
+          "style": "secret"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602016"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>God that was so hot~</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Take a short break </p>",
+          "mode": "custom",
+          "duration": "10s"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-18": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500109"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Give it all you got!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:240-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-19": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500110"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Go on... grab my butt, just do it</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:150-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "30s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-20": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500111"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Are you holding up okay?</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:120-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "40s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-21": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500112"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>You are feeling pretty ok? Let me fix that</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:210-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "40s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "say": {
+          "label": "<p><span style=\"color: #ffee58\"><strong>Edge</strong></span> <span style=\"color: #ffeb3b\"><strong>[SPACE TO CONTINUE] </strong></span>for me!</p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-22": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500113"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Is this what you wanted? God you&#39;re pathetic</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:90-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "30s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-23": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500114"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>They always pop. How about you?</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:120-bpm.mp3"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-24": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500115"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Please take your time to look at my great body</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:30-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "59s"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      }
+    ],
+    "fieldTask-25": [
+      {
+        "image": {
+          "locator": "gallery:000ec140-9857-4365-8fe1-7be47cc385fc/1499896"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>You made it to the end!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Con-</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:dd4217fd-ab99-42e7-bccf-59fa58b7ef79/1602000"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>grat-</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602017"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>u-</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:747c4e54-3ef7-424a-ab88-0e6bf1c65ff5/1602053"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>lations</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Before you get to cum you will have to edge for every one of us </p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:000ec140-9857-4365-8fe1-7be47cc385fc/*"
+        }
+      },
+      {
+        "say": {
+          "label": "<p><span style=\"color: #ffeb3b\"><strong>Edge [SPACE TO CONTINUE]</strong></span></p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:dd4217fd-ab99-42e7-bccf-59fa58b7ef79/*"
+        }
+      },
+      {
+        "say": {
+          "label": "<p><span style=\"color: #ffeb3b\"><strong>Edge [SPACE TO CONTINUE]</strong></span></p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/*"
+        }
+      },
+      {
+        "say": {
+          "label": "<p><span style=\"color: #ffeb3b\"><strong>Edge [SPACE TO CONTINUE]</strong></span></p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:747c4e54-3ef7-424a-ab88-0e6bf1c65ff5/*"
+        }
+      },
+      {
+        "say": {
+          "label": "<p><span style=\"color: #ffeb3b\"><strong>Edge [SPACE TO CONTINUE]</strong></span></p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Hold it...</p>",
+          "mode": "instant"
+        }
+      },
+      {
+        "timer": {
+          "duration": "10s",
+          "style": "secret"
+        }
+      },
+      {
+        "say": {
+          "label": "<p><span style=\"color: #ffeb3b\"><strong>CUM! [SPACE TO CONTINUE]</strong></span></p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Feel free to come again</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "end": {}
+      }
+    ],
     "fieldTask-26": [],
     "fieldTask-27": [],
     "fieldTask-28": [],
@@ -1466,7 +2473,193 @@
     "fieldTask-34": [],
     "fieldTask-35": [],
     "fieldTask-36": [],
-    "fieldTask-37": [],
+    "fieldTask-37": [
+      {
+        "image": {
+          "locator": "gallery:747c4e54-3ef7-424a-ab88-0e6bf1c65ff5/1602051"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>I Esdeath command you to <span style=\"color: #ffeb3b\"><strong>edge [SPACE TO CONTINUE]</strong></span></p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:747c4e54-3ef7-424a-ab88-0e6bf1c65ff5/1602057"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>I don&#39;t care if you just edged</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Start stroking again and prepare to edge once more</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:60-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "29s",
+          "style": "normal"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:747c4e54-3ef7-424a-ab88-0e6bf1c65ff5/1602054"
+        }
+      },
+      {
+        "say": {
+          "label": "<p><span style=\"color: #ffeb3b\"><strong>Edge [SPACE TO CONTINUE]</strong></span></p>",
+          "mode": "pause"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Hands off and stop touching</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:747c4e54-3ef7-424a-ab88-0e6bf1c65ff5/1602053"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Now it is time for some pain</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Start hitting your balls!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:60-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "29s",
+          "style": "secret"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:747c4e54-3ef7-424a-ab88-0e6bf1c65ff5/1602055"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Squeeze them now</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "timer": {
+          "duration": "29s",
+          "style": "secret"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Hit them again but harder!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:30-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "29s",
+          "style": "secret"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:747c4e54-3ef7-424a-ab88-0e6bf1c65ff5/1602052"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Guess what we are doing now..</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>..squeezing again, but harder!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "timer": {
+          "duration": "29s",
+          "style": "secret"
+        }
+      },
+      {
+        "image": {
+          "locator": "gallery:747c4e54-3ef7-424a-ab88-0e6bf1c65ff5/1602056"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>You may roll the next dice now</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
     "fieldTask-38": [],
     "fieldTask-39": [],
     "fieldTask-40": [],
@@ -1512,7 +2705,7 @@
             },
             {
               "say": {
-                "label": "<p>I am the guardian of this maze</p>",
+                "label": "<p>I am making sure you behave!</p>",
                 "mode": "autoplay",
                 "allowSkip": true
               }
@@ -1958,6 +3151,41 @@
       {
         "end": {}
       }
+    ],
+    "inspiration": [
+      {
+        "say": {
+          "label": "<p>As I am not very confident in my task creation skills I took some inspiration for bigger field encounters here:</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Morexis - Lost in Lewd Labyrinth </p><p><span style=\"color: #2196f3\"><u>https://milovana.com/webteases/showtease.php?id=45571</u></span></p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Morexis - The Mystical Maze</p><p><span style=\"color: #2196f3\"><u>https://milovana.com/webteases/showtease.php?id=41896</u></span></p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Joicon - The Hentai Tournament Megatease</p><p><span style=\"color: #2196f3\"><u>https://milovana.com/webteases/showtease.php?id=48601</u></span></p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "goto": {
+          "target": "start"
+        }
+      }
     ]
   },
   "modules": {
@@ -2105,6 +3333,90 @@
           "size": 166791,
           "width": 754,
           "height": 1200
+        },
+        {
+          "id": 1500104,
+          "hash": "bf3994545a6eeebc1617f03f4443530b686d5bbc",
+          "size": 295680,
+          "width": 641,
+          "height": 1282
+        },
+        {
+          "id": 1500105,
+          "hash": "80be76e61d065a89ecf6b4f83824c594af196340",
+          "size": 150176,
+          "width": 1114,
+          "height": 1929
+        },
+        {
+          "id": 1500106,
+          "hash": "6ef3d5391498e6b3115e13dfe5dfbccb07332cb4",
+          "size": 106490,
+          "width": 542,
+          "height": 767
+        },
+        {
+          "id": 1500107,
+          "hash": "48e93a28c4b0e30718d365edd1828f40f1938945",
+          "size": 77252,
+          "width": 640,
+          "height": 933
+        },
+        {
+          "id": 1500108,
+          "hash": "1d9418edb14f533121c4c46e1ca3830dc5c2ee6c",
+          "size": 1223172,
+          "width": 7680,
+          "height": 5120
+        },
+        {
+          "id": 1500109,
+          "hash": "75fcb8bfbe995766fcba63e0ede84a1e9cd54180",
+          "size": 476719,
+          "width": 1715,
+          "height": 2425
+        },
+        {
+          "id": 1500110,
+          "hash": "8c090c4b64c20518af3c3ebd75583f1bfc59573c",
+          "size": 441884,
+          "width": 2160,
+          "height": 3470
+        },
+        {
+          "id": 1500111,
+          "hash": "e19e641502d0d5e9722281997fe77208147eab7a",
+          "size": 74730,
+          "width": 850,
+          "height": 1122
+        },
+        {
+          "id": 1500112,
+          "hash": "155ae24ab760fbadd66f5759575fa7335ef151c1",
+          "size": 616552,
+          "width": 2149,
+          "height": 3500
+        },
+        {
+          "id": 1500113,
+          "hash": "64406c106abca362ac94a2ef90167acf31f8ed66",
+          "size": 907429,
+          "width": 2821,
+          "height": 3911
+        },
+        {
+          "id": 1500114,
+          "hash": "75171b384552954fce521af1a5b269bbc7006800",
+          "size": 156135,
+          "width": 1871,
+          "height": 1755
+        },
+        {
+          "id": 1500115,
+          "hash": "8d73ac24ccd930d3c0b0a6f95b964550c91ea659",
+          "size": 103113,
+          "width": 850,
+          "height": 2204
         }
       ]
     },
@@ -2243,6 +3555,273 @@
           "height": 1962
         }
       ]
+    },
+    "dd4217fd-ab99-42e7-bccf-59fa58b7ef79": {
+      "name": "Emilia",
+      "images": [
+        {
+          "id": 1601998,
+          "hash": "4c583489475d1b6ad971c0fdc877dd1d4e358143",
+          "size": 60992,
+          "width": 770,
+          "height": 1080
+        },
+        {
+          "id": 1601999,
+          "hash": "e997502ec388589b175399ba6ec271d6dd10565b",
+          "size": 90618,
+          "width": 763,
+          "height": 1080
+        },
+        {
+          "id": 1602000,
+          "hash": "1abdfa80fba43064b188c2a48620073337c0fd3d",
+          "size": 72327,
+          "width": 850,
+          "height": 743
+        },
+        {
+          "id": 1602001,
+          "hash": "4dca40e6491ddc71d0e7fc7e5779692805f40ae9",
+          "size": 110736,
+          "width": 763,
+          "height": 1080
+        },
+        {
+          "id": 1602002,
+          "hash": "bf769b948b8ee921ce7809084853c7e2d8a8f7bd",
+          "size": 96658,
+          "width": 763,
+          "height": 1080
+        },
+        {
+          "id": 1602003,
+          "hash": "e5a6816db567c888e10048348e7d9fcd380f2f01",
+          "size": 123949,
+          "width": 588,
+          "height": 1080
+        },
+        {
+          "id": 1602004,
+          "hash": "c8947cc23b67d20b2868ebaaf7d11c81114fc07c",
+          "size": 79756,
+          "width": 668,
+          "height": 1080
+        },
+        {
+          "id": 1602005,
+          "hash": "ed22c13cbba65b77248cf1a24931534d552265c4",
+          "size": 95664,
+          "width": 765,
+          "height": 1080
+        },
+        {
+          "id": 1602006,
+          "hash": "be39317e2f17d1430e087e92527e7de3bb8416d6",
+          "size": 113316,
+          "width": 764,
+          "height": 1080
+        }
+      ]
+    },
+    "765cb362-ecb5-4c5a-829a-87baa2937f78": {
+      "name": "Akeno",
+      "images": [
+        {
+          "id": 1602009,
+          "hash": "86cdbe6736cd621011c8a9bb9362fd2f3a2854fc",
+          "size": 93555,
+          "width": 723,
+          "height": 1023
+        },
+        {
+          "id": 1602010,
+          "hash": "2a252065c42934f681cb57b23fa24b4148bd3a7b",
+          "size": 122343,
+          "width": 640,
+          "height": 800
+        },
+        {
+          "id": 1602011,
+          "hash": "a83eb477cc09592b5bbdddd18dd0b701ba79d35e",
+          "size": 127059,
+          "width": 823,
+          "height": 850
+        },
+        {
+          "id": 1602012,
+          "hash": "20632596ae72e5662002ce638af38e52746dda86",
+          "size": 125801,
+          "width": 640,
+          "height": 800
+        },
+        {
+          "id": 1602013,
+          "hash": "d5a8f3e6c00f8a545858df343c4140cc5c69efe2",
+          "size": 80301,
+          "width": 764,
+          "height": 1080
+        },
+        {
+          "id": 1602014,
+          "hash": "fc623a0803e9189cf669d785395b7ea95c88e065",
+          "size": 210641,
+          "width": 1024,
+          "height": 768
+        },
+        {
+          "id": 1602015,
+          "hash": "d73e9a430986fcb4ea486fc0c9d62b867a73dc24",
+          "size": 79398,
+          "width": 727,
+          "height": 1080
+        },
+        {
+          "id": 1602016,
+          "hash": "ea1e4c8ceb5995a01cbf634892111b77e218ed24",
+          "size": 94305,
+          "width": 850,
+          "height": 1062
+        },
+        {
+          "id": 1602017,
+          "hash": "7d1745d5d3e22dcd80332361d3a53e3915cb9bc2",
+          "size": 136736,
+          "width": 640,
+          "height": 800
+        },
+        {
+          "id": 1602018,
+          "hash": "9e287331bcb8e56a6257c66e2825634acfea02c2",
+          "size": 73039,
+          "width": 744,
+          "height": 1080
+        },
+        {
+          "id": 1602019,
+          "hash": "ce57a1b1c1a013ebc9dae52f34f4add175d3e388",
+          "size": 119124,
+          "width": 640,
+          "height": 800
+        },
+        {
+          "id": 1602020,
+          "hash": "3b3095fd2f20068c5c0a63f44e1472023549bc8e",
+          "size": 91863,
+          "width": 810,
+          "height": 1080
+        },
+        {
+          "id": 1602021,
+          "hash": "3017640a04c23d30aa4b2a0b2995cf1195c4048f",
+          "size": 144221,
+          "width": 640,
+          "height": 800
+        },
+        {
+          "id": 1602022,
+          "hash": "a56a25cb3a3e8570e25bb202894a098f9209b92f",
+          "size": 127484,
+          "width": 640,
+          "height": 800
+        },
+        {
+          "id": 1602023,
+          "hash": "d5357c3c5c372f06f33914acd3a5518c5b3c7174",
+          "size": 61024,
+          "width": 850,
+          "height": 684
+        },
+        {
+          "id": 1602025,
+          "hash": "e5a3abf94b0e5c3254898e03726c91cae4a3da2d",
+          "size": 123200,
+          "width": 640,
+          "height": 800
+        },
+        {
+          "id": 1602026,
+          "hash": "7073d49999227ee115402e8a0a1e9971ea58d93f",
+          "size": 74323,
+          "width": 850,
+          "height": 685
+        },
+        {
+          "id": 1602027,
+          "hash": "408a06954d8839283da593e2bf5a40e000612c19",
+          "size": 195915,
+          "width": 1024,
+          "height": 768
+        },
+        {
+          "id": 1602028,
+          "hash": "5dfecc137cb98ff708b7c4ed23ecaefa4b05ac99",
+          "size": 121741,
+          "width": 640,
+          "height": 800
+        },
+        {
+          "id": 1602029,
+          "hash": "a788f03c83f629a412ef28fd054499dc1a66a9c0",
+          "size": 107592,
+          "width": 763,
+          "height": 1080
+        }
+      ]
+    },
+    "747c4e54-3ef7-424a-ab88-0e6bf1c65ff5": {
+      "name": "Esdeath",
+      "images": [
+        {
+          "id": 1602051,
+          "hash": "494d7853541e04a6ad66c28b1de4502faccae8bc",
+          "size": 89507,
+          "width": 724,
+          "height": 1053
+        },
+        {
+          "id": 1602052,
+          "hash": "896b3a9537fd34ef0f1603262521dce45665754b",
+          "size": 95720,
+          "width": 850,
+          "height": 1022
+        },
+        {
+          "id": 1602053,
+          "hash": "5ce3f8475606c07818becee59d3a81a939a215ff",
+          "size": 102507,
+          "width": 810,
+          "height": 1080
+        },
+        {
+          "id": 1602054,
+          "hash": "f0a1112b8f3cd4a3036f78fda1ae85c22bfab8fb",
+          "size": 113895,
+          "width": 712,
+          "height": 1080
+        },
+        {
+          "id": 1602055,
+          "hash": "16272d91fc0877b3833970cbdf6712ab55fee0ea",
+          "size": 94746,
+          "width": 684,
+          "height": 1080
+        },
+        {
+          "id": 1602056,
+          "hash": "9f85cf9b2026e9d4079371c7b0a07e4f1bbc1460",
+          "size": 160708,
+          "width": 784,
+          "height": 1080
+        },
+        {
+          "id": 1602057,
+          "hash": "34b6b23c6b18133884eade3f3727fe7bcea7bd85",
+          "size": 84515,
+          "width": 850,
+          "height": 850
+        }
+      ]
     }
   },
   "editor": {
@@ -2250,15 +3829,23 @@
       {
         "type": "gallery",
         "mimeType": "image/jpeg",
-        "galleryId": "472d95b0-ed21-4bc1-b395-019657ba963b",
-        "url": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500103",
-        "imageId": 1500103
+        "galleryId": "747c4e54-3ef7-424a-ab88-0e6bf1c65ff5",
+        "url": "gallery:747c4e54-3ef7-424a-ab88-0e6bf1c65ff5/1602053",
+        "imageId": 1602053
       },
       {
         "type": "gallery",
         "mimeType": "image/jpeg",
-        "galleryId": "e3516b6e-2899-413e-87fd-72eec6f85727",
-        "url": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
+        "galleryId": "765cb362-ecb5-4c5a-829a-87baa2937f78",
+        "url": "gallery:765cb362-ecb5-4c5a-829a-87baa2937f78/1602017",
+        "imageId": 1602017
+      },
+      {
+        "type": "gallery",
+        "mimeType": "image/jpeg",
+        "galleryId": "dd4217fd-ab99-42e7-bccf-59fa58b7ef79",
+        "url": "gallery:dd4217fd-ab99-42e7-bccf-59fa58b7ef79/1602000",
+        "imageId": 1602000
       },
       {
         "type": "gallery",
@@ -2266,6 +3853,19 @@
         "galleryId": "000ec140-9857-4365-8fe1-7be47cc385fc",
         "url": "gallery:000ec140-9857-4365-8fe1-7be47cc385fc/1499896",
         "imageId": 1499896
+      },
+      {
+        "type": "gallery",
+        "mimeType": "image/jpeg",
+        "galleryId": "472d95b0-ed21-4bc1-b395-019657ba963b",
+        "url": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500115",
+        "imageId": 1500115
+      },
+      {
+        "type": "gallery",
+        "mimeType": "image/jpeg",
+        "galleryId": "e3516b6e-2899-413e-87fd-72eec6f85727",
+        "url": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
       },
       {
         "type": "gallery",
@@ -2282,7 +3882,7 @@
       }
     ]
   },
-  "init": "var punisherVisits = 0;\r\nvar imageFieldStack = [];\r\nvar isSlideShow = false;\r\nvar lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar currentTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    lastRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) !== -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.length; i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n        game.lastRing = game.currentRing;\r\n      }\r\n    \r\n      lastTurn = currentTurn;\r\n\r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false, isInReverse: game.isInReverse };\r\n      var roll = game.rollDice();\r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n    \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.lastRing = game.currentRing;\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.lastRing = game.currentRing;\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      currentTurn = result;\r\n\r\n      console.warn(\"lastTurn was reversed \", lastTurn.isInReverse);\r\n      console.warn(\"currentTrun is in reverse\", currentTurn.isInReverse );\r\n\r\n      return result;\r\n    }\r\n  };",
+  "init": "var punisherVisits = 0;\r\nvar imageFieldStack = [];\r\nvar isSlideShow = false;\r\nvar lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar currentTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    lastRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) !== -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.length; i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n        game.lastRing = game.currentRing;\r\n      }\r\n    \r\n      lastTurn = currentTurn;\r\n\r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false, isInReverse: game.isInReverse };\r\n      var roll = game.rollDice();\r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n    \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.lastRing = game.currentRing;\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.lastRing = game.currentRing;\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      currentTurn = result;\r\n\r\n      return result;\r\n    }\r\n  };",
   "files": {
     "field1.jpg": {
       "id": 1497211,
