@@ -1,3 +1,5 @@
+https://www.reddit.com/r/HeartShapedHentai/comments/dy17cf/im_ready_for_you/
+
 Heheh. Im loving this.
 Keep stroking, fellow~
 
