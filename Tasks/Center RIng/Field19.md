@@ -1,5 +1,5 @@
-give me 100 strokes fast
+https://www.reddit.com/r/hentai/comments/or60tg/thicc_and_perfect_ass/
 
 Go on... touch my butt, just grab my butt.
 
-- Stroke 80 times in 60 seconds.
+give me 100 strokes fast

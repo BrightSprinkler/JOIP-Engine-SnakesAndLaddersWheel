@@ -28,6 +28,7 @@ var game = {
         reverseIndex: undefined,
       },
     currentRing: null,
+    lastRing: null,
     rollDice: function() {
       return Math.floor((Math.random() * 6) + 1);
     },
@@ -70,6 +71,7 @@ var game = {
         game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])
         game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])
         game.currentRing = game.innerRing;
+        game.lastRing = game.currentRing;
       }
     
       lastTurn = currentTurn;
@@ -84,6 +86,7 @@ var game = {
         if (game.currentRing === game.outerRing) {
           newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;
         } else {
+          game.lastRing = game.currentRing;
           game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;
           newField = game.currentRing.ladderIndex;
         }
@@ -94,6 +97,7 @@ var game = {
         result.isSnake = true;
   
         if (game.currentRing !== game.innerRing) {
+          game.lastRing = game.currentRing;
           game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;
           newField = game.currentRing.ladderIndex;
         }
@@ -110,8 +114,6 @@ var game = {
       result.roll = roll;
       result.newField = newField + 1;
       currentTurn = result;
-
-      console.warn(lastTurn, currentTurn, game);
 
       return result;
     }

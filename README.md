@@ -23,7 +23,7 @@ Move by throwing a dice (1-6)
 
 ### Probabilities
 
-![Probabilities](https://raw.githubusercontent.com/BrightSprinkler/SnakesAndLaddersWheel/master/D6%20Probabilities.png)
+![Probabilities](https://github.com/BrightSprinkler/SnakesAndLaddersWheel/blob/master/Menu/D6%20Probabilities.jpg?raw=true)
 
 [Calculation Tool](https://github.com/BrightSprinkler/SnakesAndLetterWheelProbabilities)
 
@@ -59,11 +59,7 @@ _see Probabilities for me details_
 Win field = both characters from ladder and snake
 
 1 Hidden char that appears if you edge or cum without permission
-ends tease after 3 unlawful edges
-
-**!! SPOILER !!**
-[Characters and their tasks](Characters.md)
-**!! SPOILER !!**
+ends tease after 3 unallowed edges
 
 ## Tasks
 
@@ -79,9 +75,3 @@ ends tease after 3 unlawful edges
   - ball punching
   - ball squeezing
   - different intensities
-
-Snakes, Ladders and Reverse have complex tasks with multiple stages
-
-- e.g.: stroke, edge, stroke , edge hold
-
-Win is special tasks with Protagonist and Antagonist.

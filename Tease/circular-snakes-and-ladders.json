@@ -240,7 +240,7 @@
       },
       {
         "say": {
-          "label": "<p>This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the author’s imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</p>",
+          "label": "<p>This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the authors imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</p>",
           "mode": "autoplay"
         }
       },
@@ -382,7 +382,7 @@
       },
       {
         "eval": {
-          "script": "var currentField = lastTurn.newField - 1;\r\nvar fieldCount = currentTurn.roll;\r\nvar ring = game.currentRing;\r\nvar reverse = lastTurn.isInReverse;\r\n\r\nfor (var i = 0; i < fieldCount; i++) {\r\n  currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n  if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n  if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n\r\n  imageFieldStack.push(\"fieldImage\"+ (currentField + 1));\r\n}"
+          "script": "var currentField = lastTurn.newField - 1;\r\nvar fieldCount = currentTurn.roll;\r\nvar ring = game.lastRing;\r\nvar reverse = currentTurn.isInReverse;\r\n\r\nfor (var i = 0; i < fieldCount; i++) {\r\n  currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n  if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n  if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n\r\n  imageFieldStack.push(\"fieldImage\"+ (currentField + 1));\r\n}"
         }
       },
       {
@@ -1260,7 +1260,9 @@
       },
       {
         "say": {
-          "label": "<p>You still hitting?</p>"
+          "label": "<p>You still hitting?</p>",
+          "mode": "autoplay",
+          "allowSkip": true
         }
       },
       {
@@ -1293,12 +1295,16 @@
       },
       {
         "say": {
-          "label": "<p>This is so embarrassing</p>"
+          "label": "<p>This is so embarrassing</p>",
+          "mode": "autoplay",
+          "allowSkip": true
         }
       },
       {
         "say": {
-          "label": "<p>Come on hurry up!</p>"
+          "label": "<p>Come on hurry up!</p>",
+          "mode": "autoplay",
+          "allowSkip": true
         }
       },
       {
@@ -1331,7 +1337,9 @@
       },
       {
         "say": {
-          "label": "<p>So close but I will never show you my pussy</p>"
+          "label": "<p>So close but I will never show you my pussy</p>",
+          "mode": "autoplay",
+          "allowSkip": true
         }
       },
       {
@@ -1356,9 +1364,83 @@
         }
       }
     ],
-    "fieldTask-9": [],
-    "fieldTask-10": [],
-    "fieldTask-11": [],
+    "fieldTask-9": [
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-10": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500102"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Do close ups of dicks make you weak?</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:150-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "20s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
+    "fieldTask-11": [
+      {
+        "image": {
+          "locator": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500103"
+        }
+      },
+      {
+        "say": {
+          "label": "<p>Oh? Didn&#39;t see you there</p>",
+          "mode": "autoplay",
+          "allowSkip": true
+        }
+      },
+      {
+        "audio.play": {
+          "locator": "file:30-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
+        "timer": {
+          "duration": "30s"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
+        }
+      },
+      {
+        "goto": {
+          "target": "currentFieldImage"
+        }
+      }
+    ],
     "fieldTask-12": [],
     "fieldTask-13": [],
     "fieldTask-14": [],
@@ -2009,6 +2091,20 @@
           "size": 90965,
           "width": 1080,
           "height": 741
+        },
+        {
+          "id": 1500102,
+          "hash": "340e596d87f1e2cd9b960a441df534e5e5c812f1",
+          "size": 55818,
+          "width": 1270,
+          "height": 880
+        },
+        {
+          "id": 1500103,
+          "hash": "3d008e97fbeffad9b437ef73de9b91fff3b9a67d",
+          "size": 166791,
+          "width": 754,
+          "height": 1200
         }
       ]
     },
@@ -2154,6 +2250,13 @@
       {
         "type": "gallery",
         "mimeType": "image/jpeg",
+        "galleryId": "472d95b0-ed21-4bc1-b395-019657ba963b",
+        "url": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1500103",
+        "imageId": 1500103
+      },
+      {
+        "type": "gallery",
+        "mimeType": "image/jpeg",
         "galleryId": "e3516b6e-2899-413e-87fd-72eec6f85727",
         "url": "gallery:e3516b6e-2899-413e-87fd-72eec6f85727/*"
       },
@@ -2163,13 +2266,6 @@
         "galleryId": "000ec140-9857-4365-8fe1-7be47cc385fc",
         "url": "gallery:000ec140-9857-4365-8fe1-7be47cc385fc/1499896",
         "imageId": 1499896
-      },
-      {
-        "type": "gallery",
-        "mimeType": "image/jpeg",
-        "galleryId": "472d95b0-ed21-4bc1-b395-019657ba963b",
-        "url": "gallery:472d95b0-ed21-4bc1-b395-019657ba963b/1499846",
-        "imageId": 1499846
       },
       {
         "type": "gallery",
@@ -2186,7 +2282,7 @@
       }
     ]
   },
-  "init": "var punisherVisits = 0;\r\nvar imageFieldStack = [];\r\nvar isSlideShow = false;\r\nvar lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar currentTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) !== -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.length; i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n      }\r\n    \r\n      lastTurn = currentTurn;\r\n\r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false, isInReverse: game.isInReverse };\r\n      var roll = game.rollDice();\r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n    \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      currentTurn = result;\r\n\r\n      console.warn(lastTurn, currentTurn, game);\r\n\r\n      return result;\r\n    }\r\n  };",
+  "init": "var punisherVisits = 0;\r\nvar imageFieldStack = [];\r\nvar isSlideShow = false;\r\nvar lastTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar currentTurn = { roll: 0, newField: 1, isSnake: false, isLadder: false, isReverse: false, isInReverse: false };\r\nvar game = {\r\n    currentFieldIndex: 0,\r\n    isInReverse: false,\r\n    innerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    middleRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    outerRing: {\r\n        fieldCount: undefined,\r\n        startIndex: undefined,\r\n        ladderIndex: undefined,\r\n        snakeIndex: undefined,\r\n        reverseIndex: undefined,\r\n      },\r\n    currentRing: null,\r\n    lastRing: null,\r\n    rollDice: function() {\r\n      return Math.floor((Math.random() * 6) + 1);\r\n    },\r\n    isOnSnake: function(index, ring) {\r\n      return ring.snakeIndex === index;\r\n    },\r\n    isOnLadder: function(index, ring) {\r\n      return ring.ladderIndex === index;\r\n    },\r\n    isOnReverse: function(index, ring) {\r\n      return ring.reverseIndex.indexOf(index) !== -1;\r\n    },\r\n    advance: function(currentField, fieldCount,reverse, ring) {\r\n      for (var i = 0; i < fieldCount; i++) {\r\n        currentField = reverse ? currentField - 1 : currentField + 1;\r\n  \r\n        if (currentField == ring.fieldCount + ring.startIndex) currentField = ring.startIndex;\r\n        if (currentField < ring.startIndex) currentField = ring.fieldCount + ring.startIndex - 1;\r\n      }\r\n  \r\n      return currentField;\r\n    },\r\n    getRing: function(startindex ,fieldCount ,ladderFieldIndex, snakeFieldIndex , reverseFieldIndex) {\r\n      var reverseFields = [];\r\n      for (var i = 0; i < reverseFieldIndex.length; i++) {\r\n        reverseFields.push(reverseFieldIndex[i] + startindex);\r\n      }\r\n\r\n      return {\r\n        fieldCount: fieldCount,\r\n        startIndex: startindex,\r\n        ladderIndex: ladderFieldIndex + startindex,\r\n        snakeIndex: snakeFieldIndex + startindex,\r\n        reverseIndex: reverseFields\r\n      }\r\n    },\r\n    playTurn: function() {\r\n      if(!game.currentRing) {\r\n        game.innerRing = game.getRing(0, 8, 0, 4, [2, 6]);\r\n        game.middleRing = game.getRing(8, 16, 0, 8, [4, 12])\r\n        game.outerRing = game.getRing(24, 24, 0 ,12, [6, 18])\r\n        game.currentRing = game.innerRing;\r\n        game.lastRing = game.currentRing;\r\n      }\r\n    \r\n      lastTurn = currentTurn;\r\n\r\n      var result = { roll: 0, newField: 0, isSnake: false, isLadder: false, isReverse: false, isInReverse: game.isInReverse };\r\n      var roll = game.rollDice();\r\n      var newField = game.advance(game.currentFieldIndex, roll, game.isInReverse, game.currentRing);\r\n    \r\n      if (game.isOnLadder(newField, game.currentRing)) {\r\n        result.isLadder = true;\r\n  \r\n        if (game.currentRing === game.outerRing) {\r\n          newField = game.outerRing.fieldCount + game.outerRing.startIndex + 1;\r\n        } else {\r\n          game.lastRing = game.currentRing;\r\n          game.currentRing = game.currentRing === game.innerRing ? game.middleRing : game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnSnake(newField, game.currentRing)) {\r\n        result.isSnake = true;\r\n  \r\n        if (game.currentRing !== game.innerRing) {\r\n          game.lastRing = game.currentRing;\r\n          game.currentRing = game.currentRing == game.middleRing ? game.innerRing: game.outerRing;\r\n          newField = game.currentRing.ladderIndex;\r\n        }\r\n  \r\n      }\r\n\r\n      if (game.isOnReverse(newField, game.currentRing)) {\r\n        result.isReverse = true;\r\n        game.isInReverse = !game.isInReverse;\r\n      }\r\n  \r\n      game.currentFieldIndex = newField;\r\n  \r\n      result.roll = roll;\r\n      result.newField = newField + 1;\r\n      currentTurn = result;\r\n\r\n      console.warn(\"lastTurn was reversed \", lastTurn.isInReverse);\r\n      console.warn(\"currentTrun is in reverse\", currentTurn.isInReverse );\r\n\r\n      return result;\r\n    }\r\n  };",
   "files": {
     "field1.jpg": {
       "id": 1497211,
