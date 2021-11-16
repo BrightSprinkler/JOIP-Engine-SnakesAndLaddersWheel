@@ -292,12 +292,12 @@
           "buttonCommands": [
             {
               "goto": {
-                "target": "punisherOrgasm"
+                "target": "punisher"
               }
             }
           ],
-          "buttonLabel": "I am cumming",
-          "id": "danger zone orgasm"
+          "buttonLabel": "I am edging",
+          "id": "danger zone edge"
         }
       },
       {
@@ -305,12 +305,12 @@
           "buttonCommands": [
             {
               "goto": {
-                "target": "punisher"
+                "target": "punisherOrgasm"
               }
             }
           ],
-          "buttonLabel": "I am edging",
-          "id": "danger zone edge"
+          "buttonLabel": "I am cumming",
+          "id": "danger zone orgasm"
         }
       },
       {
@@ -1918,7 +1918,7 @@
       },
       {
         "say": {
-          "label": "<p>When you see a picture of me clothed you mus stroke full speed</p>",
+          "label": "<p>When you see a picture of me clothed you must stroke full speed</p>",
           "mode": "autoplay",
           "allowSkip": true
         }
@@ -1956,7 +1956,7 @@
       },
       {
         "timer": {
-          "duration": "20s",
+          "duration": "15s-30s",
           "style": "secret"
         }
       },
@@ -1996,7 +1996,7 @@
       },
       {
         "timer": {
-          "duration": "30s",
+          "duration": "20s-40s",
           "style": "secret"
         }
       },
@@ -2036,7 +2036,7 @@
       },
       {
         "timer": {
-          "duration": "10s",
+          "duration": "10s-30s",
           "style": "secret"
         }
       },
@@ -2483,7 +2483,7 @@
       },
       {
         "say": {
-          "label": "<p>You are the first so see me naked...</p>",
+          "label": "<p>You are the first to see me naked...</p>",
           "mode": "autoplay",
           "allowSkip": true
         }
@@ -3423,9 +3423,20 @@
         }
       },
       {
+        "audio.play": {
+          "locator": "file:240-bpm.mp3",
+          "id": "beat"
+        }
+      },
+      {
         "say": {
           "label": "<p><span style=\"color: #ffeb3b\"><strong>Edge [SPACE TO CONTINUE]</strong></span></p>",
           "mode": "pause"
+        }
+      },
+      {
+        "eval": {
+          "script": "Sound.get(\"beat\").stop();"
         }
       },
       {
