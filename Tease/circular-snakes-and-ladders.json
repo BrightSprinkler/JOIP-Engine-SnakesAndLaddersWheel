@@ -246,13 +246,15 @@
       {
         "say": {
           "label": "<p>Every character is 18 years old or older.</p>",
-          "mode": "autoplay"
+          "mode": "autoplay",
+          "allowSkip": true
         }
       },
       {
         "say": {
           "label": "<p>This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the authors imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</p>",
-          "mode": "autoplay"
+          "mode": "autoplay",
+          "allowSkip": true
         }
       },
       {
@@ -4089,7 +4091,7 @@
     "punisherOrgasm": [
       {
         "notification.remove": {
-          "id": "punisher edge"
+          "id": "danger zone edge"
         }
       },
       {
@@ -5874,6 +5876,14 @@
       "hash": "ab677aee8b2325f65eaa4c6e0a52601d2ec621a7",
       "size": 687343,
       "type": "audio/mpeg"
+    },
+    "thumbnail.jpg": {
+      "id": 1602887,
+      "hash": "de6c96209e8c9d06cfa2caec76def67f52ae71f3",
+      "size": 657150,
+      "type": "image/jpeg",
+      "width": 1080,
+      "height": 1080
     }
   }
 } 
